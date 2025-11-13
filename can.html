@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <canvas width="600" height="400" style="border: 1px solid red"></canvas>
+    <script>
+      // 2d getContext
+      let can = document.querySelector("canvas");
+      let ctx = can.getContext("2d");
+
+      ctx.fillRect(250, 40, 50, 50);
+      ctx.fillRect(270, 90, 10, 20);
+      ctx.fillRect(210, 110, 130, 10);
+      ctx.fillRect(230, 120, 90, 80);
+      ctx.fillRect(230, 200, 10, 60);
+      ctx.fillRect(310, 200, 10, 60);
+    </script>
+  </body>
+</html>
