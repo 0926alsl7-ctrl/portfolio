@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <canvas width="600" height="400" style="border: 1px solid red"></canvas>
+    <script>
+      let ctx = document.querySelector("canvas").getContext("2d");
+      ctx.lineWidth = 4;
+      ctx.strokeRect(100, 30, 20, 20);
+      ctx.fillRect(108, 50, 4, 50);
+
+      ctx.beginPath();
+      ctx.moveTo(110, 96);
+      ctx.lineTo(82, 130);
+      ctx.stroke();
+
+      ctx.beginPath();
+      ctx.moveTo(110, 96);
+      ctx.lineTo(138, 130);
+      ctx.stroke();
+
+      ctx.beginPath();
+      ctx.moveTo(82, 56);
+      ctx.lineTo(109, 68);
+      ctx.moveTo(110, 68);
+      ctx.lineTo(136, 56);
+      ctx.stroke();
+    </script>
+  </body>
+</html>

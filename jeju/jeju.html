@@ -50,7 +50,7 @@
           <div class="menu">
             <ul class="mega_menu">
               <li>
-                <a href="#">예약</a>
+                <a href="#" id="hov">예약</a>
                 <div class="drop">
                   <ul>
                     <li class="first">
@@ -96,7 +96,7 @@
                 </div>
               </li>
               <li>
-                <a href="#">여행 준비</a>
+                <a href="#" id="hov">여행 준비</a>
                 <div class="drop">
                   <ul>
                     <li class="second">
@@ -155,7 +155,7 @@
                 </div>
               </li>
               <li>
-                <a href="#">여행 편의</a>
+                <a href="#" id="hov">여행 편의</a>
                 <div class="drop">
                   <ul>
                     <li class="third">
@@ -208,7 +208,7 @@
                 </div>
               </li>
               <li>
-                <a href="#">J 멤버스</a>
+                <a href="#" id="hov">J 멤버스</a>
                 <div class="drop">
                   <ul>
                     <li class="fourth">
@@ -240,7 +240,7 @@
                 </div>
               </li>
               <li>
-                <a href="#">이벤트/제휴</a>
+                <a href="#" id="hov">이벤트/제휴</a>
                 <div class="drop">
                   <ul>
                     <li class="fifth">
@@ -270,8 +270,8 @@
                   </ul>
                 </div>
               </li>
-              <li class="mega_menu_hov">
-                <a href="#">J 캠페인</a>
+              <li>
+                <a href="#" id="hov">J 캠페인</a>
                 <div class="drop"></div>
               </li>
             </ul>
@@ -283,8 +283,137 @@
       </nav>
     </header>
     <main>
-      <div class="slide">
-        <div class="ticket"></div>
+      <div class="slider">
+        <div class="slides">
+          <a href="#" class="slide s1">
+            <h1>
+              부산 - 푸꾸옥 신규취항 <br /><span>1</span>2월
+              <span>1</span>7일부터 매일 운항
+            </h1>
+          </a>
+          <a href="#" class="slide s2">
+            <h1>부산 - 타이베이 증편 <br /><span>11~</span> 3월 판매 오픈!</h1>
+          </a>
+          <a href="#" class="slide s3">
+            <h1>
+              일본 속 작은 유럽, 하코다테 <br /><span>11~</span> 3월 출발 판매
+              오픈!
+            </h1>
+          </a>
+          <a href="#" class="slide s4">
+            <h1>
+              인기 여행지 상하이 <br /><span>11~</span> 3월 출발 판매 오픈!
+            </h1>
+          </a>
+          <a href="#" class="slide s5">
+            <h1>인천-싱가포르 신규취항<br />매일 1회 운항중</h1>
+          </a>
+        </div>
+        <div id="slidebtn">
+          <button id="left"></button>
+          <div class="page"></div>
+          <button id="right"></button>
+          <span class="stop"></span>
+        </div>
+        <div class="ticket">
+          <h2 class="reserves">
+            <p class="reserve active" data-tab="tab1">항공권 예매</p>
+            <p class="reserve" data-tab="tab2">예약 조회</p>
+            <p class="reserve" data-tab="tab3">운항 조회</p>
+          </h2>
+          <ul id="tab1" class="tab show">
+            <li class="clickcolors">
+              <a href="#" class="clickcolor active">왕복</a>
+              <a href="#" class="clickcolor" style="margin-left: 18px">편도</a>
+              <a href="#" class="clickcolor" style="margin-left: 18px"
+                >다구간</a
+              >
+            </li>
+            <li class="ticketing">
+              <div class="ticketing_left">
+                <a href="#" id="depart">출발지</a>
+                <button id="change_depart_arrival"></button>
+                <a href="#" id="arrival">도착지</a>
+              </div>
+              <button id="departdate">
+                <span id="departdate_txt"></span>
+              </button>
+              <button id="departnum">
+                <span id="departnum_txt"> 성인1 </span>
+              </button>
+            </li>
+            <li class="ticketing_row" style="margin-top: 30px">
+              <p class="ticket_sale">결제 방법</p>
+              <button id="ask"></button>
+              <div class="payselect">
+                <input type="radio" name="point" id="radio1" checked /><label
+                  for="radio1"
+                  ><div class="radio active"></div>
+                  일반</label
+                >
+                <input type="radio" name="point" id="radio2" /><label
+                  for="radio2"
+                  ><div class="radio"></div>
+                  포인트</label
+                >
+                <input type="radio" name="point" id="radio3" /><label
+                  for="radio3"
+                  ><div class="radio"></div>
+                  기프티켓</label
+                >
+              </div>
+            </li>
+            <li
+              class="ticketing_row"
+              style="display: flex; align-items: center; position: relative"
+            >
+              <p class="ticket_sale">할인 방법</p>
+              <button id="ask"></button>
+              <div class="promotion">
+                <input
+                  type="text"
+                  id="code"
+                  placeholder="프로모션 코드를 입력해주세요!"
+                />
+                <a href="#" id="coupon">운임 할인 쿠폰</a>
+              </div>
+              <button id="airsearch">항공권 검색</button>
+            </li>
+          </ul>
+          <ul id="tab2" class="tab">
+            <div class="reservenum">
+              <li>
+                <div class="reservenum_inner">
+                  <input type="text" name="reservenum_inner" id="" />
+                </div>
+              </li>
+              <li></li>
+              <li>
+                <div class="firstname_inner">
+                  <input type="text" name="firstname_inner" id="" />
+                </div>
+              </li>
+              <li>
+                <div class="name_inner">
+                  <input type="text" name="name_inner" id="" />
+                </div>
+              </li>
+            </div>
+            <div class="notice">
+              <li>
+                <p>
+                  여행사, 공항, 고객센터, 비회원 예약 고객님도 조회 가능합니다.
+                </p>
+              </li>
+              <li><p>예약시 입력한 탑승객명을 입력해 주세요.</p></li>
+              <li><p>국제선의 경우 영문명을 입력해 주세요.</p></li>
+              <li>
+                <p>2명 이상 예약 조회는 <span>여기</span>를 클릭해 주세요</p>
+              </li>
+            </div>
+          </ul>
+          <ul id="tab3" class="tab"></ul>
+        </div>
       </div>
       <section></section>
     </main>
@@ -297,6 +426,22 @@
       <div class="article6"></div>
     </article>
     <footer></footer>
-    <div class="popup"></div>
+    <div class="popup1">
+      <div class="popup1_inner">
+        <p>
+          더 원활한 사용을 위해 쿠키를 허용하고 제주항공 웹 사이트를
+          사용해주세요.
+        </p>
+        <button id="permitpopup1">허용</button>
+        <button id="closepopup1"></button>
+      </div>
+    </div>
+    <div class="popup2">
+      <div class="popup2_inner">
+        <p>가는 여정을 선택하세요.</p>
+        <button id="closepopup2"></button>
+        <button id="checkpopup2">확인</button>
+      </div>
+    </div>
   </body>
 </html>
