@@ -1,0 +1,379 @@
+@font-face {
+  font-family: "Cafe24Ssurround";
+  src: url(fonts/Cafe24Ssurround-v2.0.woff2) format("woff2"),
+    url(fonts/Cafe24Ssurround-v2.0.woff) format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Cafe24Meongi";
+  src: url(fonts/Cafe24Meongi-W-v1.0.woff2) format("woff2"),
+    url(fonts/Cafe24Meongi-W-v1.0.woff) format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* 2. 공통설정 */
+html,
+body {
+  font-family: "Cafe24Ssurround", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: normal;
+  line-height: 1.4;
+  white-space: nowrap;
+  word-break: keep-all;
+}
+/* 3. webkit */
+:root {
+  --mainColor: #ffd4d6;
+}
+/* 4. Utility */
+div {
+  unicode-bidi: isolate;
+}
+ul,
+li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+input,
+button,
+select {
+  cursor: pointer;
+  border: 0;
+  outline: none;
+  background: transparent;
+  appearance: none;
+}
+a:link,
+a:visited {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+img {
+  border: 0;
+  max-width: 100%;
+  vertical-align: middle;
+  overflow: clip;
+}
+h1,
+h2 {
+  padding: 0;
+  margin: 0;
+  display: inline-block;
+}
+/* .robo {
+  font-family: "Roboto", sans-serif !important;
+  font-weight: 900 !important;
+  line-height: 1 !important;
+  letter-spacing: -1px !important;
+}
+.robo h1,
+.robo h2 {
+  font-weight: 900 !important;
+} */
+
+b {
+  font-weight: 700;
+}
+/* 5. Layout */
+body {
+  transition: padding 400ms ease-in-out;
+  -webkit-font-smoothing: antialiased;
+}
+.main_body {
+  overflow: hidden;
+  height: 100%;
+}
+
+.main {
+  height: 100%;
+  position: relative;
+  touch-action: none;
+  transition: 700ms;
+  display: block;
+}
+
+.cont_wrap {
+  padding-top: 106px;
+}
+.main_body .cont_wrap {
+  padding-top: 0 !important;
+}
+.main_body .cont_box {
+  overflow: hidden;
+}
+.main_wrap .cont_box {
+  padding: 0 !important;
+}
+
+/* ================================================= (1) swiper ================================================= */
+.swiper {
+  height: 100%;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+.swiper-container {
+  width: 100%;
+  height: 100%;
+  overflow: visible !important;
+}
+
+.swiper-slide {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  flex-shrink: 0;
+  transition-property: transform;
+}
+.swiper-button-next,
+.swiper-button-prev {
+  position: absolute;
+  top: 50%;
+  width: 27px;
+  height: 44px;
+  margin-top: -22px;
+  z-index: 10;
+  cursor: pointer;
+  background-size: 27px 44px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.swiper-button-next {
+  transform: translate(-50%, -50%) rotate(-135deg);
+}
+.swiper-button-next::after {
+  display: none;
+}
+.swiper-button-prev {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+.swiper-button-prev::after {
+  display: none;
+}
+
+.swiper-button-next.swiper-button-disabled,
+.swiper-button-prev.swiper-button-disabled {
+  display: block;
+  pointer-events: auto;
+  cursor: pointer;
+}
+button {
+  outline: none;
+  border: 0;
+  cursor: pointer;
+}
+.btn {
+  font-family: "Noto Sans KR", sans-serif;
+  background-color: #fff;
+  border: 1px solid #e0e0e0;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  font-weight: 500;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.animated {
+  transition-timing-function: ease;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+.fadeInUp {
+  transition-duration: 1.2s;
+  transition-property: opacity, transform;
+  animation-name: fadeInUp;
+}
+.animation01 {
+  animation-delay: 0s !important;
+}
+.animation02 {
+  animation-delay: 0.2s !important;
+}
+/* .animation03 {
+  animation-delay: 0.4s !important;
+} */
+.animation04 {
+  animation-delay: 0.4s !important;
+}
+.animation05 {
+  animation-delay: 0.6s !important;
+}
+.animation06 {
+  animation-delay: 0.8s !important;
+}
+@keyframes scroll_down_icon_move {
+  0% {
+    bottom: 10px;
+    opacity: 1;
+  }
+  50% {
+    bottom: 0;
+    opacity: 0.2;
+  }
+  100% {
+    bottom: 10px;
+    opacity: 1;
+  }
+}
+
+@keyframes scroll_down_icon_mouse_move {
+  0% {
+    transform: translate(-50%, 5px);
+    opacity: 0;
+  }
+  50% {
+    transform: translate(-50%, 15px);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, 30px);
+    opacity: 0;
+  }
+}
+.scroll_down_text {
+  margin-top: 5px;
+  font-size: 15px;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* ========================================== Section ============================================================= */
+.wrap {
+  width: 100%;
+}
+/* ============================================ 3. main ============================================================= */
+.main_wrap {
+  width: 100%;
+  padding-top: 0 !important;
+}
+/* ============================================ (1) section1 - section_main ========================================== */
+.section_main {
+  text-align: center;
+}
+.section_main .cont_boxs {
+  height: 100%;
+}
+.section_main .swiper_wrap {
+  height: 100%;
+}
+.section_main .swiper {
+  max-width: inherit;
+}
+.section_main .swiper-container {
+  height: 100% !important;
+}
+.section_main .section_main_swiper {
+  background: #ffd4d6;
+}
+.section_main .swiper-wrapper {
+  height: 100% !important;
+}
+.section_main .swiper-slide {
+  opacity: 1;
+  margin-right: 0;
+  height: 100% !important;
+  overflow: hidden;
+  background-size: cover !important;
+  background-position: center center !important;
+  cursor: grab;
+}
+.section_main .swiper-slide .swiper-slide_img {
+  width: 100%;
+  height: 100%;
+  background-size: cover !important;
+  background-position: center center !important;
+}
+.swiper-slide_img_pc {
+  display: block;
+}
+.swiper-slide_img_m {
+  display: none;
+}
+.section_main .swiper-button_wrapper {
+  display: none;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  z-index: 2;
+}
+.swiper-button_box {
+  max-width: 1024px;
+  margin: 0 auto;
+  position: relative;
+}
+.section_main .swiper-button-next,
+.section_main .swiper-button-prev {
+  width: 60px !important;
+  height: 60px !important;
+  border: solid #1c1c1b;
+  border-width: 0 0 2px 2px;
+  top: 50%;
+  opacity: 0.2;
+}
+
+.section_main .swiper-button-next {
+  left: auto !important;
+  right: 50px !important;
+}
+.section_main .swiper-button-prev {
+  left: 50px !important;
+  right: auto !important;
+}
+.swiper-pagination-bullet-active {
+  width: 48px !important;
+  border-radius: 5px !important;
+}
+.swiper-pagination-bullet {
+  width: 20px;
+  height: 8px !important;
+  background: #fff !important;
+  border-radius: 100px;
+}
+.scroll_down_icon {
+  color: #fff;
+  position: absolute;
+  z-index: 1;
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%, -50%);
+  animation: scroll_down_icon_move 1.5s linear infinite;
+  cursor: pointer;
+}
+.scroll_down_icon_mouse {
+  margin: 0 auto;
+  display: block;
+  border-radius: 50px;
+  border: 2px solid #fff;
+  height: 50px;
+  width: 25px;
+  position: relative;
+}
+.scroll_down_icon_mouse_move {
+  position: absolute;
+  background-color: #fff;
+  height: 8px;
+  width: 4px;
+  border-radius: 100px;
+  left: 50%;
+  animation: scroll_down_icon_mouse_move 2s linear infinite;
+}
