@@ -23,77 +23,105 @@
     <script src="portfolio.js" defer></script>
   </head>
   <body>
-    <div class="main_wrap cont_wrap" id="fullpage">
-      <div class="main fullpage-wrapper">
-        <div
-          id="section1"
-          class="cont_box section_main section active"
-          data-anchor="main"
-        >
-          <div class="swiper_wrap">
-            <div class="swiper-container section_main_swiper">
-              <ul class="swiper-wrapper">
-                <li class="swiper-slide">
-                  <div class="section_middle">
-                    <div class="cont_boxs">
-                      <div class="cont_title">
-                        <span class="portfolio_title">PORTFOLIO</span>
-                      </div>
-                      <div class="cont_text">안녕하세요, 웹 퍼블리셔 하미니입니다.</div>
-                    </div>
-                  </div>
-                </li>
-              </ul>
-            </div>
+   <header class="header_wrap">
+  <nav class="nav_menu">
+    <ul>
+      <li data-menuindex="1" class="active"><a href="#main">HOME</a></li>
+      <li data-menuindex="2"><a href="#about">ABOUT</a></li>
+      <li data-menuindex="3"><a href="#skill">SKILL</a></li>
+      <li data-menuindex="4"><a href="#work">WORK</a></li>
+      <li data-menuindex="5"><a href="#contact">CONTACT</a></li>
+    </ul>
+  </nav>
+</header>
+<div class="main_wrap cont_wrap" id="fullpage">
+  <div id="section1" class="section section_main" data-anchor="main">
+    <div class="section_middle">
+      <div class="cont_boxs">
+        <h1 class="portfolio_title">PORTFOLIO</h1>
+      </div>
+    </div>
+    <div class="scroll_down_icon_wrap">
+          <div class="scroll_down_icon"><span class="scroll_down_icon_mouse"><span class="scroll_down_icon_mouse_move"></span></span></div>
+    </div>
+  </div>
+    <div id="section2" class="section section_about" data-anchor="about">
+    <div class="section_middle">
+      <div class="cont_boxs">
+          <div class="cont_title section_main_fade animation_fade_up animaiton03 animated fadeInUp"><h2><span class="cont_title_bg">ABOUT ME</span></h2></div>
+        <div class="cont_box">
+          <div class="about_card profile">
+             <h4 class="card_title">Profile</h4>
+             <ul></ul>
           </div>
-          <div class="scroll_down_icon_wrap">
-            <div class="scroll_down_icon">
-              <span class="scroll_down_icon_mouse"></span>
-            </div>
-          </div>
-        </div>
-        <div
-          id="section2"
-          class="cont_box section_about section"
-          data-anchor="about"
-        >
-          <div class="section_middle">
-            <div class="cont_boxs">
-              <div class="cont_title_wrap">
-                <div class="cont_title"><h2>ABOUT ME</h2></div>
-                <div class="cont_text_box">
-                  <p>성실함으로 다져진 코드, 하미니입니다.</p>
-                </div>
-              </div>
-            </div>
+          <div class="about_card education">
+             <h4 class="card_title">Education</h4>
+             <ul></ul>
           </div>
         </div>
-        <div
-          id="section3"
-          class="cont_box section_skill section"
-          data-anchor="skill"
-        >
-          <div class="section_middle">
-            <div class="cont_boxs">
-              <div class="cont_title_wrap"><h2>SKILLS</h2></div>
-              <div class="swiper-container section_menu_swiper">
-                <ul class="swiper-wrapper">
-                  <li class="swiper-slide"><h3>HTML 90%</h3></li>
-                  <li class="swiper-slide"><h3>CSS 90%</h3></li>
-                  <li class="swiper-slide"><h3>JS 70%</h3></li>
-                </ul>
-              </div>
+      </div>
+    </div>
+    <div class="scroll_down_icon_wrap">
+          <div class="scroll_down_icon"><span class="scroll_down_icon_mouse"><span class="scroll_down_icon_mouse_move"></span></span></div>
+    </div>
+  </div>
+   <div id="section3" class="section section_skill" data-anchor="skill">
+    <div class="section_middle">
+      <div class="cont_boxs">
+        <div class="cont_title section_main_fade animation_fade_up animaiton04 animated fadeInUp"><h2><span class="cont_title_bg">Skill</span></h2></div>
+        <div class="cont_box">
+        <div class="skill_circle_wrap">
+          <div class="skill_item">
+            <div class="skill_item_title"></div>
+            <div class="circle_svg_box">
+              <svg><circle class="bg" cx="70" cy="70" r="60"></circle><circle class="bar" cx="70" cy="70" r="60"></circle></svg>
+              <h3 data-per="70">70%</h3>
             </div>
+            <p>HTML/CSS</p>
+          </div>
+          <div class="skill_item">
+            <div class="skill_item_title"></div>
+            <div class="circle_svg_box">
+              <svg><circle class="bg" cx="70" cy="70" r="60"></circle><circle class="bar" cx="70" cy="70" r="60"></circle></svg>
+              <h3 data-per="50">50%</h3>
+            </div>
+            <p>Javascript</p>
+          </div>
+          <div class="skill_item">
+            <div class="skill_item_title"></div>
+            <div class="circle_svg_box">
+              <svg><circle class="bg" cx="70" cy="70" r="60"></circle><circle class="bar" cx="70" cy="70" r="60"></circle></svg>
+              <h3 data-per="30">30%</h3>
+            </div>
+            <p>Jquery</p>
+          </div>
+          <div class="skill_item">
+            <div class="skill_item_title"></div>
+            <div class="circle_svg_box">
+              <svg><circle class="bg" cx="70" cy="70" r="60"></circle><circle class="bar" cx="70" cy="70" r="60"></circle></svg>
+              <h3 data-per="60">60%</h3>
+            </div>
+            <p>Ps/Ai</p>
           </div>
         </div>
-        <div
+        </div>
+      </div>
+    </div>
+     <div class="scroll_down_icon_wrap">
+     <div class="scroll_down_icon"><span class="scroll_down_icon_mouse"><span class="scroll_down_icon_mouse_move"></span></span></div>
+    </div>
+  </div>
+    <div
           id="section4"
-          class="cont_box section_work section"
+          class="section section_work"
           data-anchor="work"
         >
           <div class="section_middle">
             <div class="cont_boxs">
-              <div class="work_list">
+            <div class="cont_title section_main_fade animation_fade_up animaiton05 animated fadeInUp"><h2><span class="cont_title_bg">Work</span></h2></div>
+            <div class="swiper-container section_work_swiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
                 <div
                   class="work_card"
                   onclick="window.open('https://0926alsl7-ctrl.github.io/jeju/')"
@@ -106,7 +134,7 @@
                   </div>
                 </div>
               </div>
-              <div class="work_list">
+              <div class="swiper-slide">
                 <div
                   class="work_card"
                   onclick="window.open('https://0926alsl7-ctrl.github.io/mega/')"
@@ -119,7 +147,7 @@
                   </div>
                 </div>
               </div>
-              <div class="work_list">
+              <div class="swiper-slide">
                 <div
                   class="work_card"
                   onclick="window.open('https://0926alsl7-ctrl.github.io/hyundai/')"
@@ -132,7 +160,7 @@
                   </div>
                 </div>
               </div>
-              <div class="work_list">
+              <div class="swiper-slide">
                 <div
                   class="work_card"
                   onclick="window.open('https://0926alsl7-ctrl.github.io/hrm/')"
@@ -145,7 +173,7 @@
                   </div>
                 </div>
               </div>
-              <div class="work_list">
+              <div class="swiper-slide">
                 <div
                   class="work_card"
                   onclick="window.open('https://0926alsl7-ctrl.github.io/hrm/')"
@@ -158,7 +186,7 @@
                   </div>
                 </div>
               </div>
-              <div class="work_list">
+              <div class="swiper-slide">
                 <div
                   class="work_card"
                   onclick="window.open('https://0926alsl7-ctrl.github.io/hrm/')"
@@ -172,101 +200,54 @@
                 </div>
               </div>
             </div>
+            <div class="swiper-pagination custom_cat_pagination"></div>
+        <div class="swiper-button-prev cat_paw"></div>
+        <div class="swiper-button-next cat_paw"></div>
+            </div>
+            </div>
           </div>
-        </div>
-
-        <div
+           <div class="scroll_down_icon_wrap">
+          <div class="scroll_down_icon"><span class="scroll_down_icon_mouse"><span class="scroll_down_icon_mouse_move"></span></span></div>
+    </div>
+  </div>
+    <div
           id="section5"
-          class="cont_box section_contact section"
+          class="section section_contact"
           data-anchor="contact"
         >
           <div class="section_middle">
-            <h2>CONTACT</h2>
-            <p>mepubbly@gmail.com</p>
+            <div class="cont_boxs">
+                   <div class="cont_title robo section_main_fade animation_fade_up animaiton06 animated fadeInUp"><h2><span class="cont_title_bg">Contact</span></h2></div>
+             <div class="contact_form">
+              <h2>Send Mail <img src=""></h2>
+             <div class="input_row">
+              <label for="contact_input_name">
+              <h4 class="input_title">Name</h4>
+              <input type="text" placeholder="NAME" class="contact_input_name">
+              </label>
+              <label for="contact_input_email">
+              <h4 class="input_title">Email</h4>
+                <input type="text" placeholder="EMAIL" class="contact_input_email">
+              </label>
+              </div>
+              <label for="contact_input_message">
+                <h4 class="input_title">Message</h4>
+              <textarea placeholder="MESSAGE" class="contact_input_message"></textarea>
+              </label>
+              <button class="send_btn">Send</button>
+            </div>
           </div>
         </div>
-      </div>
     </div>
-    <script>
-      var player;
-      $(document).ready(function () {
-        $("body").addClass("main_body");
-        fullpage();
-      });
-
-      function fullpage() {
-        var AsideMenuList = $(".aside_menu_list");
-
-        $(".main").fullpage({
-          anchors: ["main", "menu", "franchise", "mega", "news", "foot"],
-          mediaAutoPlay: false,
-
-          onLeave: function (index, nextIndex, direction) {
-            $(this).find(".cont_title_bg").removeClass("cont_title_bg_active");
-            AsideMenuList.removeClass("on");
-            AsideMenuList.eq(nextIndex - 1).addClass("on");
-
-            $(".animation").removeClass("hidden");
-            $(".animation_fade_up").addClass("animated fadeUp");
-            $(this).next().find(".animation").removeClass("hidden");
-            $(this)
-              .next()
-              .find(".animation_fade_up")
-              .addClass("animated fadeUp");
-            $(this).prev().find(".animation").removeClass("hidden");
-            $(this)
-              .prev()
-              .find(".animation_fade_up")
-              .addClass("animated fadeUp");
-
-            if (nextIndex !== 1) {
-              $(".header_wrap").addClass("header_fixed");
-            } else {
-              $(".header_wrap").removeClass("header_fixed");
-            }
-          },
-
-          afterLoad: function (index, nextIndex, direction) {
-            $(this).find(".cont_title_bg").addClass("cont_title_bg_active");
-
-            $(".animation").removeClass("hidden");
-            $(".animation_fade_up").addClass("animated fadeInUp");
-            if ($(this).prev().find(".animation").is("hidden") == false) {
-              $(this).prev().find(".animation").addClass("hidden");
-              $(this)
-                .prev()
-                .find(".animation_fade_up")
-                .removeClass("animated fadeInUp");
-            }
-            if ($(this).next().find(".animation").is("hidden") == false) {
-              $(this).next().find(".animation").addClass("hidden");
-              $(this)
-                .next()
-                .find(".animation_fade_up")
-                .removeClass("animated fadeInUp");
-            }
-
-            if (player) {
-              if (index === 3) {
-                player.playVideo();
-              } else if (typeof player.pauseVideo === "function") {
-                player.pauseVideo();
-              }
-            }
-          },
-          afterRender: function (anchorLink, index) {
-            AsideMenuList.each(function (idx) {
-              $(this).click(function () {
-                $.fn.fullpage.moveTo(idx + 1);
-              });
-            });
-
-            $(".scroll_down_icon_wrap").click(function () {
-              $.fn.fullpage.moveTo(2);
-            });
-          },
-        });
-      }
-    </script>
+    </div>
+  <div id="loading">
+    <div class="loader_wrap">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
   </body>
 </html>
