@@ -16,6 +16,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/jquery.fullpage.min.css"
     />
+    <link rel="stylesheet" href="fonts/web/variable/pretendardvariable.css">
     <link rel="stylesheet" href="portfolio.css" />
     <script src="jquery-3.7.1.min.js"></script>
     <script src="https://unpkg.com/swiper@6.8.4/swiper-bundle.min.js"></script>
@@ -26,11 +27,11 @@
    <header class="header_wrap">
   <nav class="nav_menu">
     <ul>
-      <li data-menuindex="1" class="active"><a href="#main">HOME</a></li>
-      <li data-menuindex="2"><a href="#about">ABOUT</a></li>
-      <li data-menuindex="3"><a href="#skill">SKILL</a></li>
-      <li data-menuindex="4"><a href="#work">WORK</a></li>
-      <li data-menuindex="5"><a href="#contact">CONTACT</a></li>
+      <li data-menuindex="1" class="active"><a href="#main" class="rounded">HOME</a></li>
+      <li data-menuindex="2"><a href="#about" class="rounded">ABOUT</a></li>
+      <li data-menuindex="3"><a href="#skill"class="rounded">SKILL</a></li>
+      <li data-menuindex="4"><a href="#work" class="rounded">WORK</a></li>
+      <li data-menuindex="5"><a href="#contact" class="rounded">CONTACT</a></li>
     </ul>
   </nav>
 </header>
@@ -38,33 +39,54 @@
   <div id="section1" class="section section_main" data-anchor="main">
     <div class="section_middle">
       <div class="cont_boxs">
-        <h1 class="portfolio_title">PORTFOLIO</h1>
+     <h1 class="portfolio_title rounded">PORTFOLIO</h1>
       </div>
     </div>
     <div class="scroll_down_icon_wrap">
           <div class="scroll_down_icon"><span class="scroll_down_icon_mouse"><span class="scroll_down_icon_mouse_move"></span></span></div>
     </div>
   </div>
-    <div id="section2" class="section section_about" data-anchor="about">
-    <div class="section_middle">
-      <div class="cont_boxs">
-          <div class="cont_title section_main_fade animation_fade_up animaiton03 animated fadeInUp"><h2><span class="cont_title_bg">ABOUT ME</span></h2></div>
-        <div class="cont_box">
-          <div class="about_card profile">
-             <h4 class="card_title">Profile</h4>
-             <ul></ul>
-          </div>
-          <div class="about_card education">
-             <h4 class="card_title">Education</h4>
-             <ul></ul>
-          </div>
+<div id="section2" class="section section_about" data-anchor="about">
+  <!-- 타이틀을 섹션 맨 위에 – nav 바로 아래 고정 -->
+  <div class="about_title_wrap">
+    <div class="cont_title section_main_fade animation_fade_up animaiton03 animated fadeInUp">
+      <h2><span class="cont_title_bg rounded">ABOUT ME</span></h2>
+    </div>
+  </div>
+
+  <!-- section_middle 안에 카드만 넣음 -->
+  <div class="section_middle">
+    <div class="cont_boxs">
+      <div class="about_card profile">
+        <h4 class="card_title">하미니</h4>
+        <div class="profile_content">
+          <p class="profile_intro">
+            프론트엔드 개발을 목표로 UI/UX와 인터랙티브 웹에 관심이 많은 개발자 지망생입니다.<br>
+            사용자 경험을 최우선으로 생각하며, 깔끔하면서도 감성적인 결과물을 만드는 것을 즐깁니다.
+          </p>
+
+          <ul class="profile_info">
+            <li><strong>이름</strong> <span >하미니</span></li>
+            <li><strong>생년월일</strong> <span >2002.09.26</span></li>
+            <li><strong>거주지</strong> <span >서울</span></li>
+            <li><strong>이메일</strong> <span >0926alsl7@naver.com</span></li>
+            <li><strong>연락처</strong> <span >010-8214-9422</span></li>
+            <li><strong>MBTI</strong> <span >INTJ</span></li>
+            <li><strong>GitHub</strong> <a href="https://github.com/0926alsl7-ctrl" target="_blank" >github.com/0926alsl7-ctrl</a></li>
+          </ul>
         </div>
       </div>
     </div>
-    <div class="scroll_down_icon_wrap">
-          <div class="scroll_down_icon"><span class="scroll_down_icon_mouse"><span class="scroll_down_icon_mouse_move"></span></span></div>
+  </div>
+
+  <div class="scroll_down_icon_wrap">
+    <div class="scroll_down_icon">
+      <span class="scroll_down_icon_mouse">
+        <span class="scroll_down_icon_mouse_move"></span>
+      </span>
     </div>
   </div>
+</div>
    <div id="section3" class="section section_skill" data-anchor="skill">
     <div class="section_middle">
       <div class="cont_boxs">
@@ -128,9 +150,9 @@
                 >
                   <div class="work_img"></div>
                   <div class="work_info">
-                    <h4 class="work_info_title">제주항공 홈페이지</h3>
-                    <span class="work_info_sub">PC / 반응형</span>
-                    <span class="work_info_sub">애니메이션 + 디자인</span>
+                    <h4 class="work_info_title rounded">제주항공 홈페이지</h3>
+                    <span class="work_info_sub rounded">PC / 반응형</span>
+                    <span class="work_info_sub rounded">애니메이션 + 디자인</span>
                   </div>
                 </div>
               </div>
@@ -222,20 +244,20 @@
               <h2>Send Mail &#128140;</h2>
              <div class="input_row">
               <label for="contact_input_name">
-              <h4 class="input_title">Name</h4>
-              <input type="text" placeholder="NAME" class="contact_input_name">
+              <h4 class="input_title rounded">Name</h4>
+              <input type="text" placeholder="NAME" class="contact_input_name rounded">
               </label>
               <label for="contact_input_email">
-              <h4 class="input_title">Email</h4>
-                <input type="text" placeholder="EMAIL" class="contact_input_email">
+              <h4 class="input_title rounded">Email</h4>
+                <input type="text" placeholder="EMAIL" class="contact_input_email rounded">
               </label>
               </div>
               <label for="contact_input_message">
-                <h4 class="input_title">Message</h4>
-              <textarea placeholder="MESSAGE" class="contact_input_message"></textarea>
+                <h4 class="input_title rounded">Message</h4>
+              <textarea placeholder="MESSAGE" class="contact_input_message rounded"></textarea>
               </label>
             </div>
-            <div class="form_btn_wrap"><button class="send_btn">Send</button></div>
+            <div class="form_btn_wrap"><button class="send_btn rounded">Send</button></div>
           </div>
         </div>
     </div>

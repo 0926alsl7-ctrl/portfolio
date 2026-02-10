@@ -1,11 +1,19 @@
 $(document).ready(function () {
-  // 1. 로딩 제어: window load 대신 바로 실행하거나 짧은 지연 후 실행
-  function hideLoading() {
-    $("#loading").fadeOut(600, function () {
-      $("#section1").addClass("active");
-      $(".header_wrap").animate({ opacity: 1, top: "30px" }, 800);
-    });
-  }
+
+function hideLoading() {
+  $("#loading").fadeOut(600, function () {
+    $("#section1").addClass("active");
+    $(".header_wrap").animate({ opacity: 1, top: "30px" }, 800);
+      setTimeout(() => {
+        const title = $(".portfolio_title")[0];
+        if (title) {
+          title.style.display = 'none';  // 숨김
+          void title.offsetWidth;        // reflow
+          title.style.display = 'inline-block';  // 다시 보이게 + 애니 시작
+        }
+      }, 100);
+  });
+}
 
   setTimeout(hideLoading, 2500);
 
@@ -13,7 +21,7 @@ $(document).ready(function () {
     anchors: ["main", "about", "skill", "work", "contact"],
     scrollingSpeed: 1000,
     afterRender: function () {
-      $(".section").eq(0).addClass("active");
+      
     },
     onLeave: function (index, nextIndex) {
       $(".section").removeClass("active");
