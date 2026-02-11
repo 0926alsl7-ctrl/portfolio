@@ -47,14 +47,12 @@
     </div>
   </div>
 <div id="section2" class="section section_about" data-anchor="about">
-  <!-- 타이틀을 섹션 맨 위에 – nav 바로 아래 고정 -->
   <div class="about_title_wrap">
     <div class="cont_title section_main_fade animation_fade_up animaiton03 animated fadeInUp">
       <h2><span class="cont_title_bg rounded">ABOUT ME</span></h2>
     </div>
   </div>
 
-  <!-- section_middle 안에 카드만 넣음 -->
   <div class="section_middle">
     <div class="cont_boxs">
       <div class="about_card profile">
@@ -87,60 +85,87 @@
     </div>
   </div>
 </div>
-   <div id="section3" class="section section_skill" data-anchor="skill">
-    <div class="section_middle">
-      <div class="cont_boxs">
-        <div class="cont_title section_main_fade animation_fade_up animaiton04 animated fadeInUp"><h2><span class="cont_title_bg">Skill</span></h2></div>
-        <div class="cont_box">
+<div id="section3" class="section section_skill" data-anchor="skill">
+  <div class="skill_title_wrap">
+    <div class="cont_title section_main_fade animation_fade_up animaiton04 animated fadeInUp">
+      <h2><span class="cont_title_bg rounded">Skill</span></h2>
+    </div>
+  </div>
+  <div class="skill_deco">
+</div>
+
+  <div class="section_middle">
+    <div class="cont_boxs">
+      <div class="cont_box">
         <div class="skill_circle_wrap">
           <div class="skill_item">
-            <div class="skill_item_title"></div>
             <div class="circle_svg_box">
-              <svg><circle class="bg" cx="70" cy="70" r="60"></circle><circle class="bar" cx="70" cy="70" r="60"></circle></svg>
-              <h3 data-per="70">70%</h3>
+              <svg viewBox="0 0 160 160">
+                <circle class="bg" cx="80" cy="80" r="70"></circle>
+                <circle class="bar" cx="80" cy="80" r="70"></circle>
+              </svg>
+              <h3 data-per="75">75%</h3>
             </div>
             <p>HTML/CSS</p>
           </div>
+
           <div class="skill_item">
-            <div class="skill_item_title"></div>
             <div class="circle_svg_box">
-              <svg><circle class="bg" cx="70" cy="70" r="60"></circle><circle class="bar" cx="70" cy="70" r="60"></circle></svg>
-              <h3 data-per="50">50%</h3>
+              <svg viewBox="0 0 160 160">
+                <circle class="bg" cx="80" cy="80" r="70"></circle>
+                <circle class="bar" cx="80" cy="80" r="70"></circle>
+              </svg>
+              <h3 data-per="40">40%</h3>
             </div>
             <p>Javascript</p>
           </div>
+
           <div class="skill_item">
-            <div class="skill_item_title"></div>
             <div class="circle_svg_box">
-              <svg><circle class="bg" cx="70" cy="70" r="60"></circle><circle class="bar" cx="70" cy="70" r="60"></circle></svg>
+              <svg viewBox="0 0 160 160">
+                <circle class="bg" cx="80" cy="80" r="70"></circle>
+                <circle class="bar" cx="80" cy="80" r="70"></circle>
+              </svg>
               <h3 data-per="30">30%</h3>
             </div>
             <p>Jquery</p>
           </div>
+
           <div class="skill_item">
-            <div class="skill_item_title"></div>
             <div class="circle_svg_box">
-              <svg><circle class="bg" cx="70" cy="70" r="60"></circle><circle class="bar" cx="70" cy="70" r="60"></circle></svg>
-              <h3 data-per="60">60%</h3>
+              <svg viewBox="0 0 160 160">
+                <circle class="bg" cx="80" cy="80" r="70"></circle>
+                <circle class="bar" cx="80" cy="80" r="70"></circle>
+              </svg>
+              <h3 data-per="70">70%</h3>
             </div>
             <p>Ps/Ai</p>
           </div>
         </div>
-        </div>
       </div>
     </div>
-     <div class="scroll_down_icon_wrap">
-     <div class="scroll_down_icon"><span class="scroll_down_icon_mouse"><span class="scroll_down_icon_mouse_move"></span></span></div>
+  </div>
+
+  <div class="scroll_down_icon_wrap">
+    <div class="scroll_down_icon">
+      <span class="scroll_down_icon_mouse">
+        <span class="scroll_down_icon_mouse_move"></span>
+      </span>
     </div>
   </div>
+</div>
     <div
           id="section4"
           class="section section_work"
           data-anchor="work"
         >
+              <div class="work_title_wrap">
+        <div class="cont_title section_main_fade animation_fade_up animaiton05 animated fadeInUp">
+           <h2><span class="cont_title_bg rounded">Work</span></h2>
+         </div>
+         </div>
           <div class="section_middle">
             <div class="cont_boxs">
-            <div class="cont_title section_main_fade animation_fade_up animaiton05 animated fadeInUp"><h2><span class="cont_title_bg">Work</span></h2></div>
             <div class="swiper-container section_work_swiper">
             <div class="swiper-wrapper">
               <div class="swiper-slide">
@@ -148,11 +173,16 @@
                   class="work_card"
                   onclick="window.open('https://0926alsl7-ctrl.github.io/jeju/')"
                 >
-                  <div class="work_img"></div>
+                  <div class="work_img"><img src="images/swiper1.png" alt="jeju">
+                  </div>
                   <div class="work_info">
                     <h4 class="work_info_title rounded">제주항공 홈페이지</h3>
                     <span class="work_info_sub rounded">PC / 반응형</span>
-                    <span class="work_info_sub rounded">애니메이션 + 디자인</span>
+                    <div class="tag_wrap">
+                      <span class="work_info_tag rounded">#Vanilla_JS_기반_로직</span>
+                      <span class="work_info_tag rounded">#DOM_조작_최적화</span>
+                      <span class="work_info_tag rounded">#멀티_컴포넌트_설계</span>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -161,11 +191,17 @@
                   class="work_card"
                   onclick="window.open('https://0926alsl7-ctrl.github.io/mega/')"
                 >
-                  <div class="work_img"></div>
+                  <div class="work_img">
+                    <img src="images/swiper2.png" alt="mega">
+                  </div>
                  <div class="work_info">
-                    <h4 class="work_info_title">메가커피 홈페이지</h3>
-                    <span class="work_info_sub">PC / 반응형</span>
-                    <span class="work_info_sub">스크롤 + 스와이퍼</span>
+                    <h4 class="work_info_title rounded">메가커피 홈페이지</h3>
+                    <span class="work_info_sub rounded">PC / 반응형</span>
+                   <div class="tag_wrap">
+                    <span class="work_info_tag rounded">#비주얼_인터랙티브_웹</span>
+                    <span class="work_info_tag rounded">#마이크로_인터랙션</span>
+                    <span class="work_info_tag rounded">#크로스_브라우징</span>
+                  </div>
                   </div>
                 </div>
               </div>
@@ -174,11 +210,55 @@
                   class="work_card"
                   onclick="window.open('https://0926alsl7-ctrl.github.io/hyundai/')"
                 >
-                  <div class="work_img"></div>
+                  <div class="work_img">
+                    <img src="images/swiper3.png" alt="hyundai">
+                  </div>
                      <div class="work_info">
-                    <h4 class="work_info_title">현대자동차 홈페이지</h3>
-                    <span class="work_info_sub">PC / 반응형</span>
-                    <span class="work_info_sub">인터랙션 + 구조</span>
+                    <h4 class="work_info_title rounded">현대자동차 홈페이지</h3>
+                    <span class="work_info_sub rounded">PC / 반응형</span>
+                    <div class="tag_wrap">
+                      <span class="work_info_tag rounded">#하이엔드_브랜드_UI</span>
+                      <span class="work_info_tag rounded">#시멘틱_마크업</span>
+                      <span class="work_info_tag rounded">#고밀도_정보_구조화</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div
+                  class="work_card"
+                  onclick="window.open('https://0926alsl7-ctrl.github.io/dunkin/')"
+                >
+                  <div class="work_img">
+                    <img src="images/swiper6.png" alt="dunkin">
+                  </div>
+                   <div class="work_info">
+                    <h4 class="work_info_title rounded">던킨 홈페이지</h3>
+                    <span class="work_info_sub rounded">PC / 반응형</span>
+                   <div class="tag_wrap">
+                    <span class="work_info_tag rounded">#Swiper_커스터마이징</span>
+                    <span class="work_info_tag rounded">#콘텐츠_딜리버리_강화</span>
+                    <span class="work_info_tag rounded">#사용자_친화적_내비게이션</span>
+                  </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div
+                  class="work_card"
+                  onclick="window.open('https://0926alsl7-ctrl.github.io/nonghyup/')"
+                >
+                  <div class="work_img">
+                    <img src="images/swiper5.png" alt="nonghyup">
+                  </div>
+                   <div class="work_info">
+                    <h4 class="work_info_title rounded">농협뱅크 홈페이지 리디자인</h3>
+                    <span class="work_info_sub rounded">PC / 반응형</span>
+                    <div class="tag_wrap">
+                      <span class="work_info_tag rounded">#사용자_경험_리디자인</span>
+                      <span class="work_info_tag rounded">#가독성_체계_확립</span>
+                      <span class="work_info_tag rounded">#모던_인터페이스_구현</span>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -187,37 +267,17 @@
                   class="work_card"
                   onclick="window.open('https://0926alsl7-ctrl.github.io/hrm/')"
                 >
-                  <div class="work_img"></div>
-                   <div class="work_info">
-                    <h4 class="work_info_title">카카오뱅크 홈페이지 리디자인</h3>
-                    <span class="work_info_sub">PC / 반응형</span>
-                    <span class="work_info_sub"></span>
+                  <div class="work_img">
+                    <img src="images/swiper4.png" alt="hrm">
                   </div>
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div
-                  class="work_card"
-                  onclick="window.open('https://0926alsl7-ctrl.github.io/hrm/')"
-                >
-                  <div class="work_img"></div>
                    <div class="work_info">
-                    <h4 class="work_info_title">애플 홈페이지</h3>
-                    <span class="work_info_sub">PC / 반응형</span>
-                    <span class="work_info_sub">미니멀 + 정제된 UI</span>
-                  </div>
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div
-                  class="work_card"
-                  onclick="window.open('https://0926alsl7-ctrl.github.io/hrm/')"
-                >
-                  <div class="work_img"></div>
-                   <div class="work_info">
-                    <h4 class="work_info_title">HRM 홈페이지</h3>
-                    <span class="work_info_sub">PC / 반응형</span>
-                    <span class="work_info_sub">데이터 + 기능</span>
+                    <h4 class="work_info_title rounded">인사관리 홈페이지</h3>
+                    <span class="work_info_sub rounded">PC / 반응형</span>
+                    <div class="tag_wrap">
+                      <span class="work_info_tag rounded">#JSON_데이터_바인딩</span>
+                      <span class="work_info_tag rounded">#상태_관리_로직</span>
+                      <span class="work_info_tag rounded">#비즈니스_로직_구현</span>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -237,9 +297,13 @@
           class="section section_contact"
           data-anchor="contact"
         >
+                      <div class="contact_title_wrap">
+        <div class="cont_title section_main_fade animation_fade_up animaiton06 animated fadeInUp">
+           <h2><span class="cont_title_bg rounded">Contact</span></h2>
+         </div>
+         </div>
           <div class="section_middle">
             <div class="cont_boxs">
-              <div class="cont_title robo section_main_fade animation_fade_up animaiton06 animated fadeInUp"><h2><span class="cont_title_bg">Contact</span></h2></div>
              <div class="contact_form">
               <h2>Send Mail &#128140;</h2>
              <div class="input_row">
