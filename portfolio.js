@@ -106,6 +106,53 @@ var workSwiper = new Swiper(".section_work_swiper", {
     1024: { slidesPerView: 2.5 }, // 데스크탑 3개! 이제 안 넓음!
   },
 });
+emailjs.init("g0LSuQJdOwNbg8pBM"); 
+
+  $('.send_btn').off('click').on('click', function() {
+    // 입력값 가져오기 (클래스명 확인!)
+    const name = $('.contact_input_name').val();
+    const email = $('.contact_input_email').val();
+    const message = $('.contact_input_message').val();
+
+    // 유효성 검사
+    if(!name || !email || !message) {
+      alert("모든 항목을 작성해 주세요! 💌");
+      return;
+    }
+
+    // 전송 확인창
+    if (confirm("메일을 전송하시겠습니까?")) {
+      const $btn = $(this);
+      $btn.prop('disabled', true);
+
+      let dotCount = 0;
+      const loadingInterval = setInterval(() => {
+        dotCount = (dotCount + 1) % 4;
+        const dots = '.'.repeat(dotCount);
+        $btn.text('Sending' + dots);
+      }, 400);
+
+      const templateParams = {
+        from_name: name,    
+        reply_to: email,    
+        message: message    
+      };
+
+      emailjs.send('service_qlr52qa', 'template_fd0heon', templateParams)
+        .then(function(response) {
+           clearInterval(loadingInterval);
+           alert("메일이 무사히 전송되었습니다! 확인 후 연락드릴게요. 😊");
+
+           $('.contact_form input, .contact_form textarea').val('');
+           $btn.text('Send').prop('disabled', false);
+        }, function(error) {
+          clearInterval(loadingInterval);
+           alert("전송에 실패했습니다. 다시 시도해 주세요! ");
+           console.log('FAILED...', error);
+           $btn.text('Send').prop('disabled', false);
+        });
+    }
+  });
 
 });
 

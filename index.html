@@ -21,6 +21,7 @@
     <script src="jquery-3.7.1.min.js"></script>
     <script src="https://unpkg.com/swiper@6.8.4/swiper-bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/jquery.fullpage.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script src="portfolio.js" defer></script>
   </head>
   <body>
@@ -37,6 +38,22 @@
 </header>
 <div class="main_wrap cont_wrap" id="fullpage">
   <div id="section1" class="section section_main" data-anchor="main">
+        <div class="main_bg_deco">
+        <div class="bubble b1"></div>
+        <div class="bubble b2"></div>
+        <div class="bubble b3"></div>
+     <div class="star s1">
+  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M12 0L14 10L24 12L14 14L12 24L10 14L0 12L10 10L12 0Z" fill="white"/>
+  </svg>
+</div>
+<div class="star s2">
+  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M12 0L14 10L24 12L14 14L12 24L10 14L0 12L10 10L12 0Z" fill="white"/>
+  </svg>
+</div>
+
+    </div>
     <div class="section_middle">
       <div class="cont_boxs">
      <h1 class="portfolio_title rounded">PORTFOLIO</h1>
@@ -283,8 +300,9 @@
               </div>
             </div>
             <div class="swiper-pagination custom_cat_pagination"></div>
-        <div class="swiper-button-prev cat_paw"></div>
-        <div class="swiper-button-next cat_paw"></div>
+        <div class="swiper-button-prev cat_paw"><span class="toes"></span> </div>
+        <div class="swiper-button-next cat_paw"><span class="toes"></span> </div>
+
             </div>
             </div>
           </div>
@@ -305,7 +323,10 @@
           <div class="section_middle">
             <div class="cont_boxs">
              <div class="contact_form">
-              <h2>Send Mail &#128140;</h2>
+              <div class="contact_title">
+              <h2 class="contact_title_txt rounded">Send Mail</h2>
+              <img src="images/mail2.png" alt="mail" class="mail_img">
+              </div>
              <div class="input_row">
               <label for="contact_input_name">
               <h4 class="input_title rounded">Name</h4>
@@ -320,8 +341,8 @@
                 <h4 class="input_title rounded">Message</h4>
               <textarea placeholder="MESSAGE" class="contact_input_message rounded"></textarea>
               </label>
+              <div class="form_btn_wrap"><button class="send_btn rounded">Send</button></div>
             </div>
-            <div class="form_btn_wrap"><button class="send_btn rounded">Send</button></div>
           </div>
         </div>
     </div>
