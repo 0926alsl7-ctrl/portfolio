@@ -695,7 +695,6 @@ h1, h2, h3, h4,
     padding-left: 24px; /* 하트 아이콘 자리 확보 */
     font-size: 0.9rem;
     line-height: 1.5;
-    transition: all 0.4s ease-out;
     flex-wrap: wrap; /* 내용이 길면 아래로 떨어지게 */
   }
 
@@ -883,27 +882,19 @@ h1, h2, h3, h4,
   height: 100%;
 }
 
-.swiper-slide {
-  width: 100%;
-  height: 100%;
-  position: relative;
-  flex-shrink: 0;
-  transition-property: transform;
-}
-
 .section_work_swiper {
   max-width: 1400px; /* 약간 더 넓게 */
   padding: 80px 20px !important; /* 위아래 여백 줘서 강조될 때 안 잘리게 */
   overflow: visible !important; 
 }
 .swiper-slide {
-  transition: all 0.5s;
-  opacity: 0.4; /* 양 옆은 흐리게 */
-  transform: scale(0.85); /* 양 옆은 작게 */
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0.3; /* 양 옆은 흐리게 */
+  transform: scale(0.7); /* 양 옆은 작게 */
 }
 .swiper-slide-active {
   opacity: 1;
-  transform: scale(1.1); /* 가운데만 뽈록! */
+  transform: scale(1.05); /* 가운데만 뽈록! */
   z-index: 10;
 }
 .swiper-slide-active .work_card {
@@ -1065,6 +1056,95 @@ h1, h2, h3, h4,
 }
 .cat_paw.swiper-button-prev { left: 20px; }
 .cat_paw.swiper-button-next { right: 20px; }
+
+@media screen and (max-width: 768px) {
+  /* 1. 타이틀 숨기기 (이전 섹션들과 통일감) */
+  .work_title_wrap {
+    display: none;
+  }
+  .section_work .section_middle{
+    margin-top: 0;
+  }
+
+  /* 2. 스와이퍼 컨테이너 여백 조정 */
+  .section_work_swiper {
+    width: 100%;
+    padding: 60px 0 !important; /* 위아래 여백 줄이고 양옆은 0 */
+  }
+
+  /* 3. ★ 핵심: 모바일 카드 크기 & 효과 ★ */
+  .swiper-slide {
+    opacity: 0.3; 
+    transform: scale(0.8); /* 양 옆은 확실히 작게 */
+  }
+  
+  .swiper-slide-active {
+    opacity: 1;
+    transform: scale(1); /* 모바일은 1.1하면 너무 커서 1이 적당해! */
+  }
+
+  .work_card {
+    border-radius: 25px; /* 모바일은 곡률을 살짝 줄여서 공간 확보 */
+    padding: 15px;
+  }
+
+  /* 4. 이미지 높이 고정 (카드들이 들쭉날쭉 안 하게) */
+  .work_img {
+    height: 180px; 
+    margin-bottom: 12px;
+  }
+  .work_img img {
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* 5. 텍스트 크기 다이어트 */
+  .work_info_title {
+    font-size: 1rem;
+    margin-bottom: 4px;
+  }
+  
+  .work_info_sub {
+    font-size: 10px;
+  }
+
+  /* 6. 태그 정리 (모바일은 좁으니까!) */
+  .tag_wrap {
+    margin-top: 10px;
+    gap: 4px;
+  }
+  
+  .work_info_tag {
+    font-size: 0.65rem;
+    padding: 3px 8px;
+    box-shadow: 1px 1px 0px var(--main-light); /* 그림자도 작게 */
+  }
+
+  /* 7. 고양이 발바닥 버튼 (모바일용 크기 조절) */
+  .cat_paw {
+      width: 55px;    /* 모바일에서 너무 작지 않게 살짝 키움 */
+    height: 50px;
+    top: 50% !important;
+    bottom: auto !important;
+    transform: translateY(-50%);
+  }
+  
+  .cat_paw.swiper-button-prev {  left: -12px !important;   /* 왼쪽 끝 */ }
+  .cat_paw.swiper-button-next { right: -12px !important;  /* 오른쪽 끝 */ }
+
+  .cat_paw::before { width: 24px; height: 18px; bottom: 10px; } /* 젤리 크기 조절 */
+  .cat_paw .toes, .cat_paw .toes::before, .cat_paw .toes::after {
+    width: 8px; height: 9px;
+  }
+  .cat_paw .toes { top: 8px; }
+  .cat_paw .toes::before { left: -10px; }
+  .cat_paw .toes::after { right: -10px; }
+
+  /* 8. 하트 페이지네이션 위치 조정 */
+  .custom_cat_pagination {
+    bottom: 30px !important;
+  }
+}
 
 /* ============================================ (5) section5 - section_contact ========================================== */
 .section_contact{

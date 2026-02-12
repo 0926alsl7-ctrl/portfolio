@@ -13,7 +13,7 @@ $(document).ready(function () {
       if (i < text.length) {
         $target.append(text.charAt(i));
         i++;
-        setTimeout(type, 100); // 120으로 하면 딱 예쁘게 천천히 나옴!
+        setTimeout(type, 80); // 120으로 하면 딱 예쁘게 천천히 나옴!
       } else {
         isTyping = false; // 다 썼으면 다시 실행 가능하게 풀기
       }
@@ -162,8 +162,8 @@ function hideLoading() {
 
 
 var workSwiper = new Swiper(".section_work_swiper", {
-  slidesPerView: 1.2, 
-  spaceBetween: 20,
+  slidesPerView: 1.4, 
+  spaceBetween: 10,
   centeredSlides: true,
   loop: true,
   watchSlidesProgress: true, 
@@ -180,8 +180,8 @@ var workSwiper = new Swiper(".section_work_swiper", {
     prevEl: ".swiper-button-prev",
   },
   breakpoints: {
-    768: { slidesPerView: 2 }, 
-    1024: { slidesPerView: 2.5 },
+    768: { slidesPerView: 1.6, spaceBetween: 30}, 
+    1024: { slidesPerView: 1.8, spaceBetween: 50},
   },
 });
 
