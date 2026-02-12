@@ -13,7 +13,7 @@ $(document).ready(function () {
       if (i < text.length) {
         $target.append(text.charAt(i));
         i++;
-        setTimeout(type, 80); 
+        setTimeout(type, 70); 
       } else {
         isTyping = false; 
       }
@@ -175,8 +175,7 @@ var workSwiper = new Swiper(".section_work_swiper", {
     prevEl: ".swiper-button-prev",
   },
   breakpoints: {
-    768: { slidesPerView: 1.6, spaceBetween: 30}, 
-    1024: { slidesPerView: 1.8, spaceBetween: 50},
+    768: { slidesPerView: 1.5, spaceBetween: 20},
   },
 });
 

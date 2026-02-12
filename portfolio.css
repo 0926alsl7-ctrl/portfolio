@@ -482,9 +482,8 @@ h1, h2, h3, h4,
 
 .about_title_wrap {
   position: absolute;
-  top: 80px; 
+  top: 70px; 
   z-index: 10;
-  padding: 20px 0 40px;
   background: transparent;
   text-align: center;
   width: 100%;
@@ -718,9 +717,8 @@ h1, h2, h3, h4,
 }
 .skill_title_wrap {
   position: absolute;
-  top: 80px; 
+  top: 70px; 
   z-index: 10;
-  padding: 20px 0 40px;
   background: transparent;
   text-align: center;
   width: 100%;
@@ -730,13 +728,13 @@ h1, h2, h3, h4,
   display: grid;
   grid-template-columns: repeat(4, 1fr); 
   gap: 20px;
-  max-width: 1200px;
+  max-width: 1300px;
   margin: auto;
-    background: rgba(255, 255, 255, 0.4); 
+  background: rgba(255, 255, 255, 0.6); 
   padding: 50px 20px;
   border-radius: 40px; 
   border: 2px solid #fff;
-  backdrop-filter: blur(5px);
+  backdrop-filter: blur(10px);
   box-shadow: 0 10px 30px rgba(255, 182, 193, 0.1);
 }
 
@@ -855,31 +853,22 @@ h1, h2, h3, h4,
 }
 .work_title_wrap {
   position: absolute;
-  top: 80px; 
+  top: 70px; 
   z-index: 10;
-  padding: 20px 0 40px;
   background: transparent;
   text-align: center;
   width: 100%;
 }
 .section_work .section_middle {
-  margin-top: 20px; 
-}
-.swiper {
-  height: 100%;
-  width: 100%;
-  max-width: 1280px;
-  margin: 0 auto;
-}
-.swiper-container {
-  width: 100%;
-  height: 100%;
+  margin-top: 40px; 
 }
 
 .section_work_swiper {
+  margin: 0 auto;
   max-width: 1400px; 
-  padding: 80px 20px !important; 
+  padding: 80px 0px !important; 
   overflow: visible !important; 
+  box-sizing: border-box;
 }
 .swiper-slide {
   transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
@@ -888,7 +877,7 @@ h1, h2, h3, h4,
 }
 .swiper-slide-active {
   opacity: 1;
-  transform: scale(1.05);
+  transform: scale(1.04);
   z-index: 10;
 }
 .swiper-slide-active .work_card {
@@ -897,7 +886,7 @@ h1, h2, h3, h4,
 }
 
 .work_card {
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.7);
   backdrop-filter: blur(10px);
   border-radius: 40px;
   padding: 20px;
@@ -913,9 +902,10 @@ h1, h2, h3, h4,
 
 .work_img {
  width: 100%;
+ max-height: 270px !important;
   box-shadow: inset 0 0 10px rgba(0,0,0,0.05);
   border-radius: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 14px;
   overflow: hidden;
 }
 .work_img img {
@@ -949,7 +939,7 @@ h1, h2, h3, h4,
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 6px;
+  gap: 10px;
 }
 
 .work_info_tag {
@@ -963,11 +953,20 @@ h1, h2, h3, h4,
   border-radius: 8px;
   letter-spacing: -0.02em;
 }
+.custom_cat_pagination {
+  top: 24px !important;  
+  bottom: auto !important; 
+  left: 50% !important;
+  transform: translateX(-50%);
+  width: auto !important;
+  z-index: 100 !important;
+}
+
 
 .custom_cat_pagination .swiper-pagination-bullet {
   width: 12px;
   height: 12px;
-  background: #f0f0f0;
+  background: rgb(199 144 153 / 30%);
   opacity: 1;
    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   margin: 0 6px !important;
@@ -1049,8 +1048,8 @@ h1, h2, h3, h4,
   right: -15px;
   transform: rotate(15deg);
 }
-.cat_paw.swiper-button-prev { left: 20px; }
-.cat_paw.swiper-button-next { right: 20px; }
+.cat_paw.swiper-button-prev { left: 60px; }
+.cat_paw.swiper-button-next { right: 60px; }
 
 @media screen and (max-width: 768px) {
   .work_title_wrap {
@@ -1091,6 +1090,7 @@ h1, h2, h3, h4,
     object-fit: cover;
   }
   .work_img {
+    max-height: none !important;
     height: 75% !important; 
   }
   .work_card:hover .work_img img{
@@ -1144,7 +1144,11 @@ h1, h2, h3, h4,
     display: none !important;
   }
 }
-
+@media screen and (max-width: 1200px){
+  .work_title_wrap {
+    display: none;
+  }
+}
 /* ============================================ (5) section5 - section_contact ========================================== */
 .section_contact{
   background: var(--bg);
@@ -1152,19 +1156,20 @@ h1, h2, h3, h4,
 }
 .contact_title_wrap {
   position: absolute;
-  top: 80px; 
+  top: 70px; 
   z-index: 10;
-  padding: 20px 0 40px;
   background: transparent;
   text-align: center;
   width: 100%;
 }
-
+ .section_contact .section_middle{
+    margin-top: 40px;
+  }
 .contact_form {
   position: relative;
   background: #fff;
-  padding: 40px 50px 50px 50px;
-  border-radius: 40px;
+  padding: 40px 40px 50px 40px;
+  border-radius: 36px;
   max-width: 800px;
   margin: 0 auto;
   border: 4px solid var(--main-light);
