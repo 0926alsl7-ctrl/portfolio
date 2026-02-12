@@ -82,6 +82,10 @@ function hideLoading() {
           typeWriter(".profile_intro", introText);
         }, 1000); 
       }
+      else {
+    $(".profile_intro").text("");
+    isTyping = false; 
+    }
 
 
       if (nextIndex === 3) setTimeout(activeSkillGauge, 500);
@@ -157,8 +161,7 @@ function hideLoading() {
 
 
 var workSwiper = new Swiper(".section_work_swiper", {
-  slidesPerView: 1.1, 
-  spaceBetween: 10,
+  slidesPerView: 1, 
   centeredSlides: true,
   loop: true,
   watchSlidesProgress: true, 

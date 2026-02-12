@@ -836,7 +836,7 @@ h1, h2, h3, h4,
     width: 120px; 
     height: 120px;
   }
-  .circle_svg_box h3 { font-size: 1.2rem; }
+  .circle_svg_box h3 { font-size: 1.1rem; }
     .skill_item {
     max-width: none;
     flex: none;
@@ -886,7 +886,7 @@ h1, h2, h3, h4,
 }
 
 .work_card {
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.4);
   backdrop-filter: blur(10px);
   border-radius: 40px;
   padding: 20px;
@@ -954,7 +954,7 @@ h1, h2, h3, h4,
   letter-spacing: -0.02em;
 }
 .custom_cat_pagination {
-  top: 24px !important;  
+  top: 20px !important;  
   bottom: auto !important; 
   left: 50% !important;
   transform: translateX(-50%);
@@ -1074,7 +1074,7 @@ h1, h2, h3, h4,
 
   .work_card {
     height: 100%;
-    padding: 25px 20px;
+    padding: 20px;
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
@@ -1125,18 +1125,18 @@ h1, h2, h3, h4,
   }
 
   .cat_paw {
-    width: 60px;
-    height: 52px;
+    width: 52px;
+    height: 46px;
   }
   
-  .cat_paw.swiper-button-prev { left: -16px !important; }
-  .cat_paw.swiper-button-next { right: -16px !important; }
+  .cat_paw.swiper-button-prev { left: -14px !important; }
+  .cat_paw.swiper-button-next { right: -14px !important; }
 
-  .cat_paw::before { width: 28px; height: 22px; bottom: 8px; } 
+  .cat_paw::before { width: 26px; height: 20px; bottom: 7px; } 
   .cat_paw .toes, .cat_paw .toes::before, .cat_paw .toes::after {
     width: 9px; height: 10px;
   }
-  .cat_paw .toes { top: 8px; }
+  .cat_paw .toes { top: 6px; }
   .cat_paw .toes::before { left: -12px; }
   .cat_paw .toes::after { right: -12px; }
 
@@ -1213,6 +1213,7 @@ color: var(--main-deep);
 
 .contact_form input,
 .contact_form textarea {
+  font-family: 'SchoolSafetyRoundedSmile', sans-serif !important;
   width: 100%;
   background: var(--main-light);
    border: 2px solid transparent !important;
@@ -1230,20 +1231,21 @@ color: var(--main-deep);
   box-shadow: 0 5px 15px rgba(255, 182, 193, 0.3);
 }
 
-.contact_form input::placeholder {
+.contact_form input::placeholder,
+.contact_form textarea::placeholder {
+  color: #666;
   font-family: 'SchoolSafetyRoundedSmile', sans-serif !important;
   font-weight: 700 !important;   
   letter-spacing: -0.5px !important; 
-  font-size: 14px;
+  font-size: 14px !important;
 }
 .contact_form textarea {
   appearance: none;
-  border: 0;
-   font-family: 'SchoolSafetyRoundedSmile', sans-serif !important;
   font-weight: 700 !important;   
   min-height: 150px;
   resize: none;
 }
+
 .form_btn_wrap{
   position: absolute;
   bottom: -24px; 
@@ -1327,12 +1329,10 @@ color: var(--main-deep);
     padding-left: 10px;
     margin-bottom: 6px;
   }
-.contact_form input::placeholder{
-  font-size: 14px;
-}
+
   .contact_form input, 
   .contact_form textarea {
-    font-size: 14px !important; 
+    font-size: 16px !important; 
   }
 
   .contact_form textarea {
