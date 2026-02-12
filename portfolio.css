@@ -1070,7 +1070,7 @@ h1, h2, h3, h4,
   }
 
   .section_work_swiper {
-    height: 80vh !important;
+    height: 75vh !important;
     padding: 20px 0 !important; 
   }
 
@@ -1083,7 +1083,7 @@ h1, h2, h3, h4,
   }
 
   .work_card {
-    height: 95%;
+    height: 100%;
     padding: 25px 20px;
     display: flex;
     flex-direction: column;
@@ -1100,8 +1100,7 @@ h1, h2, h3, h4,
     object-fit: cover;
   }
   .work_img {
-    height: 70% !important; 
-    margin-bottom: 30px !important;
+    height: 75% !important; 
   }
   .work_card:hover .work_img img{
     transform: none;
@@ -1125,8 +1124,8 @@ h1, h2, h3, h4,
 
   /* 6. 태그 정리 (모바일은 좁으니까!) */
   .tag_wrap {
-    margin-top: 10px;
-    gap: 4px;
+    margin-top: 12px;
+    gap: 8px 6px;
   }
   
   .work_info_tag {
@@ -1303,25 +1302,63 @@ color: var(--main-deep);
 }
 
 @media screen and (max-width: 768px) {
-  .contact_form {
-    padding: 40px 20px 60px 20px; /* 아래쪽 여백 더 주기 (버튼 겹침 대비) */
-    width: 90%;
+  /* 1. 타이틀 숨기기 (이전 섹션들과 통일) */
+  .contact_title_wrap {
+    display: none;
   }
 
-  .input_row {
-    flex-direction: column; /* 가로 배열을 세로로 */
-    gap: 15px;
+  /* 3. 폼 디자인 수정 */
+  .contact_form {
+    box-shadow: 8px 8px 0px var(--main-light); /* 모바일은 그림자 살짝 얇게 */
+    height: 50vh;
+    box-sizing: border-box;
+  }
+
+  .contact_title {
+    margin-bottom: 25px;
   }
 
   .contact_title_txt {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
+  }
+
+  .mail_img {
+    width: 25px;
+  }
+  /* 4. 입력창 세로 배열 및 폰트 크기 */
+  .input_row {
+    flex-direction: column;
+    gap: 24px;
+    margin-bottom: 40px;
+  }
+
+  .input_title {
+    font-size: 1rem;
+    padding-left: 10px;
+    margin-bottom: 6px;
+  }
+
+  .contact_form input, 
+  .contact_form textarea {
+    font-size: 16px !important; /* ★중요: iOS에서 input 클릭 시 자동 줌 방지하려면 16px 이상! */
+  }
+
+  .contact_form textarea {
+    min-height: 160px; /* 모바일은 키보드 올라오니까 살짝 줄여줌 */
+  }
+
+  /* 5. 전송 버튼 모바일 최적화 */
+  .form_btn_wrap {
+    bottom: -22px; /* 폼 하단에 더 예쁘게 걸치게 조정 */
   }
 
   .send_btn {
-    width: 150px;
-    font-size: 1.2rem;
+    width: 160px;
+    font-size: 1.3rem;
+    box-shadow: 0 6px 0 #d17a8a, 0 10px 20px rgba(255, 138, 157, 0.3); /* 그림자도 스케일 다운 */
   }
 }
+
 
 /* ============================================ (6) loading ========================================== */
 #loading {
