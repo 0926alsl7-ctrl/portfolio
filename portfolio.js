@@ -162,7 +162,7 @@ function hideLoading() {
 
 
 var workSwiper = new Swiper(".section_work_swiper", {
-  slidesPerView: 1.4, 
+  slidesPerView: 1.1, 
   spaceBetween: 10,
   centeredSlides: true,
   loop: true,
