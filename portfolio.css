@@ -29,7 +29,6 @@ body {
   letter-spacing: normal;
   line-height: 1.6; 
   color: var(--black-cat);
-  background: var(--bg);
   white-space: nowrap;
   word-break: keep-all;
   overflow: hidden;
@@ -313,7 +312,7 @@ h1, h2, h3, h4,
   color: #fff;
 }
 .nav_menu li.active{
-margin-left: 10px;
+  margin-left: 10px;
 }
 .nav_menu li.active a {
     opacity: 1;
@@ -386,7 +385,14 @@ margin-left: 10px;
     color: var(--main-deep) !important;
     font-weight: 800;
   }
-
+  .nav_menu li.active{
+  margin-left: 20px;
+  }
+  .nav_menu li.active::before{
+    width: 14px;
+    height: 14px;
+    left: -18px;
+  }
   /* 섹션 1 마우스 아이콘 터치 영역 강화 */
   .section.active .scroll_down_icon_mouse {
     width: 22px !important; 
