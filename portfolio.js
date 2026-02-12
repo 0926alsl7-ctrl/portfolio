@@ -42,6 +42,11 @@ function hideLoading() {
     },
   });
 
+    $(document).on('click', '.scroll_down_icon', function() {
+    $.fn.fullpage.moveSectionDown();
+  });
+
+
   function activeSkillGauge() {
   $(".circle_svg_box").each(function () {
     let $this = $(this);
@@ -75,7 +80,6 @@ function hideLoading() {
   }
 
   function resetSkillGauge() {
-  // 리셋할 때도 둘레값 맞춰야 함
   let r = 68;
   let c = Math.PI * (r * 2);
   $(".bar").css("stroke-dashoffset", c);
@@ -84,7 +88,7 @@ function hideLoading() {
 
 
 var workSwiper = new Swiper(".section_work_swiper", {
-  slidesPerView: 1.2, // 기본 모바일 1개
+  slidesPerView: 1.2, 
   spaceBetween: 20,
   centeredSlides: true,
   loop: true,
@@ -102,25 +106,22 @@ var workSwiper = new Swiper(".section_work_swiper", {
     prevEl: ".swiper-button-prev",
   },
   breakpoints: {
-    768: { slidesPerView: 2 }, // 태블릿 2개
-    1024: { slidesPerView: 2.5 }, // 데스크탑 3개! 이제 안 넓음!
+    768: { slidesPerView: 2 }, 
+    1024: { slidesPerView: 2.5 },
   },
 });
 emailjs.init("g0LSuQJdOwNbg8pBM"); 
 
   $('.send_btn').off('click').on('click', function() {
-    // 입력값 가져오기 (클래스명 확인!)
     const name = $('.contact_input_name').val();
     const email = $('.contact_input_email').val();
     const message = $('.contact_input_message').val();
 
-    // 유효성 검사
     if(!name || !email || !message) {
       alert("모든 항목을 작성해 주세요! 💌");
       return;
     }
 
-    // 전송 확인창
     if (confirm("메일을 전송하시겠습니까?")) {
       const $btn = $(this);
       $btn.prop('disabled', true);
@@ -156,29 +157,49 @@ emailjs.init("g0LSuQJdOwNbg8pBM");
 
 });
 
-// 스킬 섹션에 귀여운 데코 아이템들 뿌리기
 function createSkillDeco() {
     const icons = ['⭐', '✨', '💗', '🍭', '🎈', '☁️', '🌸','💕','🫧','💖','💫']; // 쓰고 싶은 이모지들
     const $decoWrap = $('.skill_deco');
     
-    for (let i = 0; i < 15; i++) { // 15개 정도 뿌리기
+    for (let i = 0; i < 15; i++) {
         const randomIcon = icons[Math.floor(Math.random() * icons.length)];
-        const randomX = Math.random() * 100; // 가로 위치 (0~100%)
-        const randomY = Math.random() * 100; // 세로 위치 (0~100%)
-        const randomDelay = Math.random() * 3; // 애니메이션 지연 시간
-        const randomSize = 1 + Math.random() * 1.5; // 크기 랜덤 (1rem ~ 2.5rem)
+        const randomX = Math.random() * 100; 
+        const randomY = Math.random() * 100; 
+        const randomDelay = Math.random() * 3;
+        const randomSize = 1 + Math.random() * 1.5;
 
         const $item = $(`<span class="deco_item">${randomIcon}</span>`).css({
             left: randomX + '%',
             top: randomY + '%',
             animationDelay: randomDelay + 's',
             fontSize: randomSize + 'rem',
-            filter: `blur(${Math.random() * 1.5}px)` // 살짝 흐릿한 것도 섞어서 입체감 주기
+            filter: `blur(${Math.random() * 1.5}px)` 
         });
 
         $decoWrap.append($item);
     }
 }
 
-// 로딩 후 실행
 createSkillDeco();
+
+$(document).ready(function () {
+  // 모바일에서 상단 영역 터치 감지 및 네브 확장
+  $(document).on('touchstart mousemove', function(e) {
+    let touchY = e.pageY || (e.originalEvent.touches ? e.originalEvent.touches[0].pageY : 0);
+    
+    // 화면 상단 80px 이내로 손가락이 오면 메뉴 확장!
+    if (touchY < 80) {
+      $('.header_wrap').addClass('expanded');
+    } else {
+      // 메뉴 영역 밖으로 나가면 다시 슬림하게 (약간의 딜레이를 주면 더 자연스러워)
+      setTimeout(() => {
+        $('.header_wrap').removeClass('expanded');
+      }, 2000); 
+    }
+  });
+
+  // 메뉴 클릭하면 즉시 다시 작아지게
+  $('.nav_menu a').on('click', function() {
+    $('.header_wrap').removeClass('expanded');
+  });
+});

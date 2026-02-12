@@ -17,7 +17,7 @@
   padding: 0;
   box-sizing: border-box;
 }
-/* 2. 공통설정 */
+
 html{
   margin: 0;
   padding: 0;
@@ -103,34 +103,10 @@ h1, h2, h3, h4,
   font-weight: 700;
 }
 
-.main {
-  height: 100%;
-  position: relative;
-  touch-action: none;
-  transition: 700ms;
+.main_wrap {
   display: block;
 }
-
-/* ================================================= (1) swiper ================================================= */
-.swiper {
-  height: 100%;
-  width: 100%;
-  max-width: 1280px;
-  margin: 0 auto;
-}
-.swiper-container {
-  width: 100%;
-  height: 100%;
-}
-
-.swiper-slide {
-  width: 100%;
-  height: 100%;
-  position: relative;
-  flex-shrink: 0;
-  transition-property: transform;
-}
-
+/*  animation ================================================= */
 .animated {
   transition-timing-function: ease;
   animation-duration: 1s;
@@ -159,39 +135,6 @@ h1, h2, h3, h4,
 .animation06 {
   animation-delay: 1s !important;
 }
-@keyframes scroll_down_icon_move {
-  0% {
-    bottom: 10px;
-    opacity: 1;
-  }
-  50% {
-    bottom: 0;
-    opacity: 0.2;
-  }
-  100% {
-    bottom: 10px;
-    opacity: 1;
-  }
-}
-
-@keyframes scroll_down_icon_mouse_move {
-  0% {
-    transform: translate(-50%, 5px);
-    opacity: 0;
-  }
-  50% {
-    transform: translate(-50%, 15px);
-    opacity: 1;
-  }
-  100% {
-    transform: translate(-50%, 30px);
-    opacity: 0;
-  }
-}
-.scroll_down_text {
-  margin-top: 5px;
-  font-size: 15px;
-}
 
 @keyframes fadeInUp {
   0% {
@@ -203,11 +146,11 @@ h1, h2, h3, h4,
     transform: translateY(0);
   }
 }
-/* ========================================================== utility ======================================================================== */
+/*  scroll_down_icon =============================================== */
 .section.active .scroll_down_icon {
   color: var(--main);
   position: absolute;
-  z-index: 99;
+  z-index: 9999 !important;
   left: 50%;
   bottom: 0;
   transform: translate(-50%, -50%);
@@ -260,6 +203,36 @@ h1, h2, h3, h4,
   left: 50%;
   animation: scroll_down_icon_mouse_move 2s linear infinite;
 }
+@keyframes scroll_down_icon_move {
+  0% {
+    bottom: 10px;
+    opacity: 1;
+  }
+  50% {
+    bottom: 0;
+    opacity: 0.2;
+  }
+  100% {
+    bottom: 10px;
+    opacity: 1;
+  }
+}
+
+@keyframes scroll_down_icon_mouse_move {
+  0% {
+    transform: translate(-50%, 5px);
+    opacity: 0;
+  }
+  50% {
+    transform: translate(-50%, 15px);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, 30px);
+    opacity: 0;
+  }
+}
+/* cont_title =================================== */
 .cont_title {
   text-align: center;
   color: #fff;
@@ -291,7 +264,8 @@ h1, h2, h3, h4,
    transform: translate(-50%, -50%) scale(1);
   box-shadow: 0 0 30px rgba(248, 161, 185, 0.6);
 }
-/* ========================================== Section ============================================================= */
+
+/*  Section ============================================================= */
 .section_middle {
   width: 100%;
   z-index: 1;
@@ -303,14 +277,13 @@ h1, h2, h3, h4,
 .cont_boxs{
   padding: 0 30px;
 }
-/* ========================================= header =================================================  */
+/* header =================================================  */
 .header_wrap {
   position: fixed;
   top: 30px;
   left: 30px;
   z-index: 1000;
 }
-
 .nav_menu {
   padding: 10px 32px;
   background: rgba(255, 255, 255, 0.4);
@@ -365,8 +338,63 @@ margin-left: 10px;
     50% { transform: translateY(-50%) scale(1.2); }
     100% { transform: translateY(-50%) scale(1); }
 }
+@media screen and (max-width: 768px) {
+ .header_wrap {
+    top: 15px !important;
+    left: 50% !important;
+    transform: translateX(-50%);
+    width: 90%; /* 화면 너비에 맞게 */
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    opacity: 1 !important;
+  }
 
-/* ============================================ (1) section1 - section_main ========================================== */
+  /* 평소엔 엄청 슬림하고 투명한 상태 */
+  .nav_menu {
+    padding: 5px 15px;
+    border-radius: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    overflow: hidden;
+    transition: all 0.4s ease;
+    height: 40px; /* 아주 얇게 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* 활성화 되었을 때 (클래스로 제어할 거야) */
+  .header_wrap.expanded .nav_menu {
+    height: 55px; /* 시원하게 커짐 */
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(15px);
+    border: 2px solid var(--main-light);
+    box-shadow: 0 10px 25px rgba(248, 161, 185, 0.2);
+  }
+
+  .nav_menu ul {
+    gap: 12px;
+    transform: scale(0.9); /* 평소엔 작게 */
+    transition: all 0.4s ease;
+  }
+
+  .header_wrap.expanded .nav_menu ul {
+    transform: scale(1); /* 커질 때 글자도 원래대로 */
+    gap: 18px;
+  }
+
+  .nav_menu a {
+    font-size: 11px;
+    color: var(--main-deep) !important;
+    font-weight: 800;
+  }
+
+  /* 섹션 1 마우스 아이콘 터치 영역 강화 */
+  .section.active .scroll_down_icon_mouse {
+    width: 22px !important; 
+    height: 40px !important; 
+  }
+}
+
+/*  (1) section1 - section_main ========================================== */
 .section { background: var(--bg); text-align: center; }
  .section_main {
   background: 
@@ -381,7 +409,6 @@ margin-left: 10px;
 }
 .main_bg_deco .bubble {
    position: absolute;
-  /* 겉은 진하고 안은 투명하게 */
   background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.1) 70%);
   border: 1px solid rgba(255, 255, 255, 0.4);
   box-shadow: inset -5px -5px 15px rgba(255, 255, 255, 0.3), 
@@ -433,14 +460,36 @@ margin-left: 10px;
   opacity: 1;
   animation: jellyPop 1.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
 }
-@keyframes floatBubble {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  50% { transform: translate(-10px, -25px) scale(1.05); }
+
+@keyframes jellyPop {
+  0% { transform: scale(0.5) translateY(100px); opacity: 0; }
+  60% { transform: scale(1.1) translateY(-10px); }
+  80% { transform: scale(0.95) translateY(5px); }
+  100% { transform: scale(1) translateY(0); opacity: 1; }
 }
 
-@keyframes twinkle {
-  0%, 100% { opacity: 0.4; transform: scale(0.7) rotate(0deg); }
-  50% { opacity: 1; transform: scale(1.1) rotate(90deg); }
+@media screen and (max-width: 768px) {
+  .section_main .portfolio_title {
+    font-size: 16vw; /* 모바일에서는 더 큼직하게! */
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.4);
+    text-shadow: 
+      0 3px 0 var(--main-light),
+      0 6px 12px rgba(209, 122, 138, 0.3);
+  }
+
+  /* 버블 크기랑 위치 조정 (모바일 화면에 맞게) */
+  .b1 { width: 150px; height: 150px; top: 20%; left: -10%; }
+  .b2 { width: 120px; height: 120px; bottom: 10%; right: -5%; }
+  .b3 { display: none; } /* 너무 복잡하면 하나 지우기 */
+
+  .s1 { top: 20%; right: 15%; width: 15px; height: 25px; }
+  .s2 { bottom: 20%; left: 10%; width: 20px; height: 32px; }
+  
+  /* 스크롤 아이콘 크기 조정 */
+  .section.active .scroll_down_icon_mouse {
+    height: 40px !important;
+    width: 22px !important;
+  }
 }
 
 /* ============================================ (2) section2 - section_about ========================================== */
@@ -747,6 +796,25 @@ margin-left: 10px;
 .section_work .section_middle {
   margin-top: 20px; /* 타이틀이랑 간격 */
 }
+.swiper {
+  height: 100%;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+.swiper-container {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  flex-shrink: 0;
+  transition-property: transform;
+}
+
 .section_work_swiper {
   max-width: 1400px; /* 약간 더 넓게 */
   padding: 80px 20px !important; /* 위아래 여백 줘서 강조될 때 안 잘리게 */
