@@ -532,45 +532,37 @@ h1, h2, h3, h4,
 }
 
 .card_title {
-  padding-bottom: 24px;
+  padding-bottom: 30px;
   margin-bottom: 30px;
   position: relative;
   display: block;
 }
+.card_title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 0;
+  border-bottom: 3px dashed var(--main-deep);
+  display: block !important; 
+}
 .card_title_txt{
   font-size: 2.2rem;
   color: var(--main-deep);
+  display: block;
 }
 .profile_intro {
+  white-space: pre-line;
   margin-top: 12px;
   font-size: 1.1rem;
   line-height: 1.8;
   font-weight: 500;
   color: #999;
-}
-
-.card_title::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;  
-  width: 0; 
-  height: 4px;
-  background: linear-gradient(to right, var(--main-light), var(--main), var(--main-deep));
-  border-radius: 2px;
-
-}
-
-.section_about.active .card_title::after {
-  animation: loadGradient 3s ease-out 1s forwards;
-}
-@keyframes loadGradient {
-  0% {
-    width: 0;
-  }
-  100% {
-    width: 100%;
-  }
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .profile_info {
@@ -672,12 +664,12 @@ h1, h2, h3, h4,
 
   /* 이름(타이틀) 크기 줄이기 */
   .card_title {
-    padding-bottom: 20px;
-    margin-bottom: 24px;
-    border-bottom: 2px dashed var(--main-deep);
+    padding-bottom: 26px;
+    margin-bottom: 26px;
   }
   .card_title::after {
-    display: none; /* 모바일은 언더라인 애니메이션보다 점선이 더 예쁠 수 있어 */
+    width: 100%;
+    border-bottom: 2px dashed var(--main-deep);
   }
   .card_title_txt{
      font-size: 1.5rem;
@@ -686,12 +678,12 @@ h1, h2, h3, h4,
 
   /* 자기소개 텍스트 줄바꿈/가독성 */
   .profile_intro {
+    white-space: normal;
     margin-top: 8px;
     font-size: 0.8rem;
-    line-height: 1.6;
-    white-space: normal; /* 중요: 긴 문장 줄바꿈 허용 */
+    line-height: 1.7;
+    padding: 0 10px;
   }
-
   /* ★ 핵심: 정보 리스트를 1열로 변경 ★ */
   .profile_info {
     grid-template-columns: 1fr; /* 무조건 한 줄에 하나씩 */
@@ -703,6 +695,7 @@ h1, h2, h3, h4,
     padding-left: 24px; /* 하트 아이콘 자리 확보 */
     font-size: 0.9rem;
     line-height: 1.5;
+    transition: all 0.4s ease-out;
     flex-wrap: wrap; /* 내용이 길면 아래로 떨어지게 */
   }
 
@@ -837,15 +830,30 @@ h1, h2, h3, h4,
 }
 
 @media screen and (max-width: 768px) {
+   .skill_title_wrap {
+    display: none;
+  }
+
   .skill_circle_wrap {
+    border: none;
     grid-template-columns: repeat(2, 1fr);  
-    gap: 30px 10px;
+    gap: 50px 10px;
+    padding: 40px 15px; 
+    min-height: 500px;
   }
   .circle_svg_box {
-    width: 130px; 
-    height: 130px;
+    width: 120px; 
+    height: 120px;
   }
-  .circle_svg_box h3 { font-size: 1.8rem; }
+  .circle_svg_box h3 { font-size: 1.2rem; }
+    .skill_item {
+    max-width: none;
+    flex: none;
+  }
+    .skill_item p {
+    margin-top: 15px; /* 간격 줄이기 */
+    font-size: 0.9rem;
+  }
 }
 /* ============================================ (4) section4 - section_work ========================================== */
 .section_work{

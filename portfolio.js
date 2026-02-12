@@ -1,5 +1,30 @@
 $(document).ready(function () {
- // --- [1] 네브 눈치 챙기기 변수 & 함수 ---
+  let isTyping = false; 
+
+  function typeWriter(selector, text) {
+    if (isTyping) return; // 이미 타이핑 중이면 또 실행 안 함
+    isTyping = true;
+    
+    const $target = $(selector);
+    $target.text(""); 
+    
+    let i = 0;
+    function type() {
+      if (i < text.length) {
+        $target.append(text.charAt(i));
+        i++;
+        setTimeout(type, 100); // 120으로 하면 딱 예쁘게 천천히 나옴!
+      } else {
+        isTyping = false; // 다 썼으면 다시 실행 가능하게 풀기
+      }
+    }
+    type();
+  }
+
+
+ const introText = "프론트엔드 개발을 목표로 UI/UX와 인터랙티브 웹에 관심이 많은 개발자 지망생입니다.\n사용자 경험을 최우선으로 생각하며, 깔끔하면서도 감성적인 결과물을 만드는 것을 즐깁니다.";
+ 
+  // --- [1] 네브 눈치 챙기기 변수 & 함수 ---
   let navTimer;
 
   function expandNav() {
@@ -54,6 +79,13 @@ function hideLoading() {
       expandNav();
       collapseNavWithDelay(2500);
 
+      if (nextIndex === 2) {
+        setTimeout(function() {
+          typeWriter(".profile_intro", introText);
+        }, 1000); // 카드 올라오는 애니메이션 끝나고 1초 뒤 시작
+      }
+
+
       if (nextIndex === 3) setTimeout(activeSkillGauge, 500);
       else resetSkillGauge();
     },
@@ -81,6 +113,11 @@ function hideLoading() {
     collapseNav();
   });
 
+  $('.nav_menu li').on('click', function() {
+    let index = $(this).index(); // 몇 번째 메뉴인지 확인
+    let anchors = ["main", "about", "skill", "work", "contact"];
+    $.fn.fullpage.moveTo(anchors[index]); // 해당 위치로 강제 이동!
+  });
 
     $(document).on('click', '.scroll_down_icon', function() {
     $.fn.fullpage.moveSectionDown();
