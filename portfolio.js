@@ -2,7 +2,7 @@ $(document).ready(function () {
   let isTyping = false; 
 
   function typeWriter(selector, text) {
-    if (isTyping) return; // 이미 타이핑 중이면 또 실행 안 함
+    if (isTyping) return; 
     isTyping = true;
     
     const $target = $(selector);
@@ -13,9 +13,9 @@ $(document).ready(function () {
       if (i < text.length) {
         $target.append(text.charAt(i));
         i++;
-        setTimeout(type, 80); // 120으로 하면 딱 예쁘게 천천히 나옴!
+        setTimeout(type, 80); 
       } else {
-        isTyping = false; // 다 썼으면 다시 실행 가능하게 풀기
+        isTyping = false; 
       }
     }
     type();
@@ -24,7 +24,6 @@ $(document).ready(function () {
 
  const introText = "프론트엔드 개발을 목표로 UI/UX와 인터랙티브 웹에 관심이 많은 개발자 지망생입니다.\n사용자 경험을 최우선으로 생각하며, 깔끔하면서도 감성적인 결과물을 만드는 것을 즐깁니다.";
  
-  // --- [1] 네브 눈치 챙기기 변수 & 함수 ---
   let navTimer;
 
   function expandNav() {
@@ -33,7 +32,6 @@ $(document).ready(function () {
   }
 
   function collapseNav() {
-    // 사용자가 메뉴 위에 마우스를 올리고 있거나 터치 중이면 안 닫음
     if ($('.header_wrap:hover').length > 0) return;
     $('.header_wrap').removeClass('expanded');
   }
@@ -52,9 +50,9 @@ function hideLoading() {
       setTimeout(() => {
         const title = $(".portfolio_title")[0];
         if (title) {
-          title.style.display = 'none';  // 숨김
-          void title.offsetWidth;        // reflow
-          title.style.display = 'inline-block';  // 다시 보이게 + 애니 시작
+          title.style.display = 'none';  
+          void title.offsetWidth;       
+          title.style.display = 'inline-block';  
         }
       }, 100);
   });
@@ -82,7 +80,7 @@ function hideLoading() {
       if (nextIndex === 2) {
         setTimeout(function() {
           typeWriter(".profile_intro", introText);
-        }, 1000); // 카드 올라오는 애니메이션 끝나고 1초 뒤 시작
+        }, 1000); 
       }
 
 
@@ -95,12 +93,10 @@ function hideLoading() {
     expandNav();
   });
 
-  // 메뉴 영역에서 손 떼면 그때부터 타이머 시작
   $('.header_wrap').on('mouseleave touchend', function() {
     collapseNavWithDelay(1500);
   });
 
-  // 화면 맨 위(100px 이내) 감지해서 펼치기
   $(document).on('touchstart mousemove', function (e) {
     let touchY = e.pageY || (e.originalEvent.touches ? e.originalEvent.touches[0].pageY : 0);
     if (touchY < 100) {
@@ -108,15 +104,14 @@ function hideLoading() {
     }
   });
 
-  // 화면 중앙 터치하면 네브 즉시 접기
   $('.section').on('touchstart', function () {
     collapseNav();
   });
 
   $('.nav_menu li').on('click', function() {
-    let index = $(this).index(); // 몇 번째 메뉴인지 확인
+    let index = $(this).index(); 
     let anchors = ["main", "about", "skill", "work", "contact"];
-    $.fn.fullpage.moveTo(anchors[index]); // 해당 위치로 강제 이동!
+    $.fn.fullpage.moveTo(anchors[index]); 
   });
 
     $(document).on('click', '.scroll_down_icon', function() {
@@ -231,7 +226,7 @@ emailjs.init("g0LSuQJdOwNbg8pBM");
   });
 
   function createSkillDeco() {
-    const icons = ['⭐', '✨', '💗', '🍭', '🎈', '☁️', '🌸','💕','🫧','💖','💫']; // 쓰고 싶은 이모지들
+    const icons = ['⭐', '✨', '💗', '🍭', '🎈', '☁️', '🌸','💕','🫧','💖','💫']; 
     const $decoWrap = $('.skill_deco');
     
     for (let i = 0; i < 15; i++) {

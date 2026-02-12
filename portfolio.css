@@ -375,7 +375,7 @@ h1, h2, h3, h4,
   }
 
   .nav_menu li {
-    display: none; /* ★ 기본적으로 다 숨김 */
+    display: none; 
     transition: opacity 0.3s;
   }
 
@@ -644,9 +644,8 @@ h1, h2, h3, h4,
     margin-top: 0; 
   }
 
-  /* 카드 박스 모바일 최적화 */
   .about_card.profile {
-    padding: 30px 20px 40px 20px; /* 양옆 여백 줄임 */
+    padding: 30px 20px 40px 20px; 
     margin: 0 auto;
   }
   .section_about.active .about_card.profile:hover{
@@ -654,7 +653,6 @@ h1, h2, h3, h4,
     box-shadow: 1px 10px 10px rgba(185, 125, 142, 0.411);
   }
 
-  /* 카드 위 "Profile" 스티커 크기 조정 */
   .about_card.profile::before {
     font-size: 0.75rem;
     left: 20px;
@@ -662,7 +660,6 @@ h1, h2, h3, h4,
     padding: 3px 12px;
   }
 
-  /* 이름(타이틀) 크기 줄이기 */
   .card_title {
     padding-bottom: 26px;
     margin-bottom: 26px;
@@ -676,7 +673,6 @@ h1, h2, h3, h4,
     letter-spacing: -0.5px;
   }
 
-  /* 자기소개 텍스트 줄바꿈/가독성 */
   .profile_intro {
     white-space: normal;
     margin-top: 8px;
@@ -684,32 +680,30 @@ h1, h2, h3, h4,
     line-height: 1.7;
     padding: 0 10px;
   }
-  /* ★ 핵심: 정보 리스트를 1열로 변경 ★ */
   .profile_info {
-    grid-template-columns: 1fr; /* 무조건 한 줄에 하나씩 */
+    grid-template-columns: 1fr; 
     gap: 16px;
-    text-align: left; /* 모바일은 왼쪽 정렬이 국룰 */
+    text-align: left; 
   }
 
   .profile_info li {
-    padding-left: 24px; /* 하트 아이콘 자리 확보 */
+    padding-left: 24px; 
     font-size: 0.9rem;
     line-height: 1.5;
-    flex-wrap: wrap; /* 내용이 길면 아래로 떨어지게 */
+    flex-wrap: wrap;
   }
 
   .profile_info li strong {
     font-size: 0.8rem;
-    min-width: 80px; /* 라벨 너비 고정 */
+    min-width: 80px; 
   }
 
   .profile_info li span, 
   .profile_info li a {
-    word-break: break-all; /* 긴 이메일이나 주소 잘림 방지 */
+    word-break: break-all; 
     font-size: 0.8rem;
   }
 
-  /* 하트 아이콘 위치 미세조정 */
   .profile_info li::before {
     width: 10px;
     height: 9px;
@@ -850,7 +844,7 @@ h1, h2, h3, h4,
     flex: none;
   }
     .skill_item p {
-    margin-top: 15px; /* 간격 줄이기 */
+    margin-top: 15px; 
     font-size: 0.9rem;
   }
 }
@@ -869,7 +863,7 @@ h1, h2, h3, h4,
   width: 100%;
 }
 .section_work .section_middle {
-  margin-top: 20px; /* 타이틀이랑 간격 */
+  margin-top: 20px; 
 }
 .swiper {
   height: 100%;
@@ -883,23 +877,23 @@ h1, h2, h3, h4,
 }
 
 .section_work_swiper {
-  max-width: 1400px; /* 약간 더 넓게 */
-  padding: 80px 20px !important; /* 위아래 여백 줘서 강조될 때 안 잘리게 */
+  max-width: 1400px; 
+  padding: 80px 20px !important; 
   overflow: visible !important; 
 }
 .swiper-slide {
   transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-  opacity: 0.3; /* 양 옆은 흐리게 */
-  transform: scale(0.7); /* 양 옆은 작게 */
+  opacity: 0.3; 
+  transform: scale(0.7); 
 }
 .swiper-slide-active {
   opacity: 1;
-  transform: scale(1.05); /* 가운데만 뽈록! */
+  transform: scale(1.05);
   z-index: 10;
 }
 .swiper-slide-active .work_card {
   border: 2px solid var(--main-light);
-  box-shadow: 0 30px 60px rgba(255, 182, 193, 0.3); /* 강조된 카드에만 더 깊은 그림자 */
+  box-shadow: 0 30px 60px rgba(255, 182, 193, 0.3); 
 }
 
 .work_card {
@@ -981,13 +975,12 @@ h1, h2, h3, h4,
 }
 .custom_cat_pagination .swiper-pagination-bullet-active {
   background: none !important;
-  width: 26px; /* 가로로 더 길게 */
+  width: 26px; 
   height: 14px;
-  /* 직접 깎은 뭉툭한 하트 SVG */
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 18'><path fill='%23f8a1b9' d='M12,18 C10,16 1,11 1,6.5 C1,3 4,1 7,1 C9,1 11,2 12,3.5 C13,2 15,1 17,1 C20,1 23,3 23,6.5 C23,11 14,16 12,18 Z'/></svg>") !important;
   background-repeat: no-repeat !important;
   background-position: center !important;
-  background-size: 100% 100% !important; /* contain 대신 꽉 채워서 납작함 강조 */
+  background-size: 100% 100% !important; 
   transform: scale(1.1);
   border-radius: 2px;
   opacity: 1;
@@ -1004,7 +997,7 @@ h1, h2, h3, h4,
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  z-index: 200 !important; /* 카드(10)보다 훨씬 높게 */
+  z-index: 200 !important; 
   cursor: pointer;
   transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   display: flex !important;
@@ -1013,14 +1006,14 @@ h1, h2, h3, h4,
 }
 
 .cat_paw:active {
-  transform: translateY(-45%) scale(0.95); /* 살짝 내려앉음 */
+  transform: translateY(-45%) scale(0.95); 
  box-shadow: 0 2px 0 #f0c0c8, 0 5px 10px rgba(220, 160, 170, 0.2);
 }
 .cat_paw::before {
   content: '';
   width: 30px;
   height: 22px;
-  background: linear-gradient(135deg, #ffbbc6, var(--main-deep)); /* 그라데이션으로 입체감 */
+  background: linear-gradient(135deg, #ffbbc6, var(--main-deep)); 
   border-radius: 50% 50% 45% 45%;
   position: absolute;
   bottom: 12px;
@@ -1038,7 +1031,6 @@ h1, h2, h3, h4,
   border-radius: 50%;
   position: absolute;
   z-index: 2;
-  /* 양옆 발가락 입체감 그림자 포함 */
    box-shadow: inset -1px -2px 3px rgba(0,0,0,0.2), inset 1px 1px 2px rgba(255,255,255,0.3);
 }
 .cat_paw .toes {
@@ -1047,12 +1039,11 @@ h1, h2, h3, h4,
   transform: translateX(-50%);
 }
 .cat_paw .toes::before {
-  top: 4px; /* 살짝 아래로 */
+  top: 4px; 
   left: -15px;
   transform: rotate(-15deg);
 }
 
-/* 오른쪽 발가락 */
 .cat_paw .toes::after {
   top: 4px;
   right: -15px;
@@ -1079,7 +1070,7 @@ h1, h2, h3, h4,
   }
   
   .swiper-slide-active {
-    transform: scale(1.02); /* 모바일은 1.1하면 너무 커서 1이 적당해! */
+    transform: scale(1.02); 
   }
 
   .work_card {
@@ -1110,9 +1101,9 @@ h1, h2, h3, h4,
     flex: 1;
     display: flex;
     flex-direction: column;
-    justify-content: center; /* 텍스트들끼리 중앙 정렬 */
+    justify-content: center; 
   }
-  /* 5. 텍스트 크기 다이어트 */
+
   .work_info_title {
     font-size: 1rem;
     margin-bottom: 4px;
@@ -1122,7 +1113,6 @@ h1, h2, h3, h4,
     font-size: 10px;
   }
 
-  /* 6. 태그 정리 (모바일은 좁으니까!) */
   .tag_wrap {
     margin-top: 12px;
     gap: 8px 6px;
@@ -1169,9 +1159,7 @@ h1, h2, h3, h4,
   text-align: center;
   width: 100%;
 }
-.section_contact .section_middle {
-  margin-top: 40px; /* 타이틀이랑 간격 */
-}
+
 .contact_form {
   position: relative;
   background: #fff;
@@ -1180,13 +1168,12 @@ h1, h2, h3, h4,
   max-width: 800px;
   margin: 0 auto;
   border: 4px solid var(--main-light);
-  /* 팝아트적인 두툼한 그림자 */
   box-shadow: 15px 15px 0px var(--main-light);
 }
 .contact_title{
   display: flex;
   align-items: center;
-  justify-content: center; /* 중앙 정렬 */
+  justify-content: center;  
   gap: 12px;
   margin-bottom: 34px;
 }
@@ -1254,7 +1241,7 @@ color: var(--main-deep);
 }
 .form_btn_wrap{
   position: absolute;
-  bottom: -24px; /* 폼 하단에 반쯤 걸치게 */
+  bottom: -24px; 
   left: 50%;
   transform: translateX(-50%);
   margin-top: 0;
@@ -1271,45 +1258,39 @@ color: var(--main-deep);
   font-size: 1.5rem;
   cursor: pointer;
   position: relative;
-  /* 버튼의 입체적인 두께감 */
   box-shadow: 0 8px 0 #d17a8a, 0 15px 25px rgba(255, 138, 157, 0.3);
   transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   top: 0;
   overflow: hidden;
 }
 
-/* 버튼 호버 시 */
 .send_btn:hover:not(:disabled) {
    background: #ff8a9d;
   transform: translateY(-3px);
   box-shadow: 0 11px 0 #d17a8a, 0 20px 30px rgba(255, 138, 157, 0.4);
 }
 
-/* ★ 클릭 시 꾹 눌리는 효과 ★ */
 .send_btn:active:not(:disabled) {
   top: 6px;
   box-shadow: 0 2px 0 #d17a8a, 0 5px 10px rgba(255, 138, 157, 0.2);
 }
 
-/* 전송 중 비활성화 상태 */
 .send_btn:disabled {
-  background: #f8a1b9; /* 회색 대신 메인 컬러의 연한 버전 */
+  background: #f8a1b9; 
   opacity: 0.8;
   color: rgba(255, 255, 255, 0.9);
-  box-shadow: 0 4px 0 #d17a8a; /* 눌려있는 듯한 높이 */
+  box-shadow: 0 4px 0 #d17a8a; 
   top: 4px;
-  cursor: wait; /* 커서 모양 변경 */
+  cursor: wait;
 }
 
 @media screen and (max-width: 768px) {
-  /* 1. 타이틀 숨기기 (이전 섹션들과 통일) */
   .contact_title_wrap {
     display: none;
   }
 
-  /* 3. 폼 디자인 수정 */
   .contact_form {
-    box-shadow: 8px 8px 0px var(--main-light); /* 모바일은 그림자 살짝 얇게 */
+    box-shadow: 8px 8px 0px var(--main-light); 
     height: 50vh;
     box-sizing: border-box;
   }
@@ -1325,7 +1306,7 @@ color: var(--main-deep);
   .mail_img {
     width: 25px;
   }
-  /* 4. 입력창 세로 배열 및 폰트 크기 */
+
   .input_row {
     flex-direction: column;
     gap: 24px;
@@ -1340,14 +1321,12 @@ color: var(--main-deep);
 
   .contact_form input, 
   .contact_form textarea {
-    font-size: 16px !important; /* ★중요: iOS에서 input 클릭 시 자동 줌 방지하려면 16px 이상! */
+    font-size: 16px !important; 
   }
 
   .contact_form textarea {
-    min-height: 160px; /* 모바일은 키보드 올라오니까 살짝 줄여줌 */
+    min-height: 160px; 
   }
-
-  /* 5. 전송 버튼 모바일 최적화 */
   .form_btn_wrap {
     bottom: -22px; /* 폼 하단에 더 예쁘게 걸치게 조정 */
   }
@@ -1355,7 +1334,7 @@ color: var(--main-deep);
   .send_btn {
     width: 160px;
     font-size: 1.3rem;
-    box-shadow: 0 6px 0 #d17a8a, 0 10px 20px rgba(255, 138, 157, 0.3); /* 그림자도 스케일 다운 */
+    box-shadow: 0 6px 0 #d17a8a, 0 10px 20px rgba(255, 138, 157, 0.3); 
   }
 }
 
