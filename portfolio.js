@@ -36,6 +36,11 @@ function hideLoading() {
       $(".nav_menu li")
         .eq(nextIndex - 1)
         .addClass("active");
+      
+      $('.header_wrap').addClass('expanded'); 
+       setTimeout(function() {
+      $('.header_wrap').removeClass('expanded');
+      }, 3000);
 
       if (nextIndex === 3) setTimeout(activeSkillGauge, 500);
       else resetSkillGauge();
@@ -183,23 +188,40 @@ function createSkillDeco() {
 createSkillDeco();
 
 $(document).ready(function () {
-  // 모바일에서 상단 영역 터치 감지 및 네브 확장
+  // 메뉴 펼치고 접는 함수
+  function expandNav() {
+    $('.header_wrap').addClass('expanded');
+  }
+  function collapseNav() {
+    $('.header_wrap').removeClass('expanded');
+  }
+
+  // 1. 처음 로딩 후 2초간 보여줬다가 접기
+  setTimeout(() => {
+    collapseNav();
+  }, 3500); // 로딩 2.5초 + 구경 1초
+
+  // 2. 섹션 이동할 때마다 잠깐 펼쳐서 위치 알려주기
+  // 기존 fullpage 설정의 onLeave나 afterLoad에 추가해!
+  // 여기서는 onLeave에 추가하는 걸 추천!
+  
+  // (Fullpage onLeave 안에 넣을 내용)
+  // onLeave: function(index, nextIndex) {
+  //    expandNav(); 
+  //    setTimeout(collapseNav, 2000); // 2초 뒤 다시 자동 접힘
+  // }
+
+  // 3. 수동 제어: 메뉴 근처에 손 대면 펼치기
   $(document).on('touchstart mousemove', function(e) {
     let touchY = e.pageY || (e.originalEvent.touches ? e.originalEvent.touches[0].pageY : 0);
-    
-    // 화면 상단 80px 이내로 손가락이 오면 메뉴 확장!
-    if (touchY < 80) {
-      $('.header_wrap').addClass('expanded');
-    } else {
-      // 메뉴 영역 밖으로 나가면 다시 슬림하게 (약간의 딜레이를 주면 더 자연스러워)
-      setTimeout(() => {
-        $('.header_wrap').removeClass('expanded');
-      }, 2000); 
+    if (touchY < 100) {
+      expandNav();
     }
   });
 
-  // 메뉴 클릭하면 즉시 다시 작아지게
-  $('.nav_menu a').on('click', function() {
-    $('.header_wrap').removeClass('expanded');
+  // 4. 화면 중앙 터치하면 네브 접기 (편의성)
+  $('.section').on('touchstart', function() {
+    collapseNav();
   });
 });
+

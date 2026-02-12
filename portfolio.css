@@ -293,6 +293,7 @@ h1, h2, h3, h4,
 .nav_menu ul {
   display: flex;
   gap: 32px;
+  align-items: center;
 }
 .nav_menu li {
     position: relative;
@@ -338,65 +339,54 @@ h1, h2, h3, h4,
     100% { transform: translateY(-50%) scale(1); }
 }
 @media screen and (max-width: 768px) {
- .header_wrap {
-    top: 15px !important;
+  .header_wrap {
+    top: 14px !important;
     left: 50% !important;
     transform: translateX(-50%);
-    width: 90%; /* 화면 너비에 맞게 */
-    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    opacity: 1 !important;
+    width: auto;
+    transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+    white-space: nowrap;
   }
-
-  /* 평소엔 엄청 슬림하고 투명한 상태 */
   .nav_menu {
-    padding: 5px 15px;
-    border-radius: 50px;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    overflow: hidden;
-    transition: all 0.4s ease;
-    height: 40px; /* 아주 얇게 */
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    padding: 2px 8px;
+    overflow: hidden; 
+    transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+    max-width: 100px; 
   }
 
-  /* 활성화 되었을 때 (클래스로 제어할 거야) */
   .header_wrap.expanded .nav_menu {
-    height: 55px; /* 시원하게 커짐 */
-    background: rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(15px);
-    border: 2px solid var(--main-light);
-    box-shadow: 0 10px 25px rgba(248, 161, 185, 0.2);
+    max-width: 380px; 
+    padding: 6px;
   }
 
   .nav_menu ul {
-    gap: 12px;
-    transform: scale(0.9); /* 평소엔 작게 */
-    transition: all 0.4s ease;
+    display: flex;
+    gap: 6px;
+    justify-content: center;
   }
 
-  .header_wrap.expanded .nav_menu ul {
-    transform: scale(1); /* 커질 때 글자도 원래대로 */
-    gap: 18px;
+  .nav_menu li {
+    display: none; /* ★ 기본적으로 다 숨김 */
+    transition: opacity 0.3s;
   }
 
-  .nav_menu a {
-    font-size: 11px;
-    color: var(--main-deep) !important;
-    font-weight: 800;
+   .nav_menu li.active,
+  .header_wrap.expanded .nav_menu li {
+    display: block;
+    opacity: 1;
   }
-  .nav_menu li.active{
-  margin-left: 20px;
+    .nav_menu a {
+    font-size: 13px;
+    padding: 6px 10px;
+    display: block;
+  }
+    .nav_menu li.active{
+  margin-left: 16px;
   }
   .nav_menu li.active::before{
     width: 14px;
     height: 14px;
-    left: -18px;
-  }
-  /* 섹션 1 마우스 아이콘 터치 영역 강화 */
-  .section.active .scroll_down_icon_mouse {
-    width: 22px !important; 
-    height: 40px !important; 
+    left: -12px;
   }
 }
 
