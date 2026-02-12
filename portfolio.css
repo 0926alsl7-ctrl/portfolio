@@ -149,7 +149,7 @@ h1, h2, h3, h4,
 .section.active .scroll_down_icon {
   color: var(--main);
   position: absolute;
-  z-index: 9999 !important;
+  z-index: 9998 !important;
   left: 50%;
   bottom: 0;
   transform: translate(-50%, -50%);
@@ -288,7 +288,7 @@ h1, h2, h3, h4,
   background: rgba(255, 255, 255, 0.4);
   border-radius: 12px;
   backdrop-filter: blur(10px);
-  box-shadow: 0 4px 15px rgba(241, 241, 241, 0.3);
+  box-shadow: 0 4px 15px rgba(248, 241, 241, 0.3);
 }
 .nav_menu ul {
   display: flex;
@@ -300,24 +300,33 @@ h1, h2, h3, h4,
     transition: all 0.3s ease;
 }
 .nav_menu a {
-    color: #fff;
-    opacity: 0.4;
+    color: var(--main-deep);
+    opacity: 0.3;
     transition: all 0.3s ease;
+}
+.nav_menu li.active a {
+   color: var(--main-deep);
+    opacity: 1;
 }
 .header_wrap.active .nav_menu{
   background: rgba(255, 204, 213, 0.8);  
   backdrop-filter: blur(10px);
   box-shadow: 0 4px 15px rgba(248, 161, 185, 0.3);
 }
+
 .header_wrap.active .nav_menu a {
-  color: #fff;
+    color: #fff;
+    opacity: 0.3;
+    transition: all 0.3s ease;
 }
-.nav_menu li.active{
-  margin-left: 10px;
-}
-.nav_menu li.active a {
+
+.header_wrap.active .nav_menu li.active a {
     opacity: 1;
     color: #fff;
+}
+
+.nav_menu li.active{
+  margin-left: 10px;
 }
 .nav_menu li.active::before {
   content: "";
@@ -340,7 +349,7 @@ h1, h2, h3, h4,
 }
 @media screen and (max-width: 768px) {
   .header_wrap {
-    top: 14px !important;
+    top: 20px !important;
     left: 50% !important;
     transform: translateX(-50%);
     width: auto;
@@ -416,26 +425,11 @@ h1, h2, h3, h4,
 .b1 { width: 240px; height: 240px; top: 15%; left: -5%; animation-delay: 0s; }
 .b2 { width: 200px; height: 200px; bottom: 15%; right: 5%; animation-delay: -2s; }
 .b3 { width: 120px; height: 120px; top: 20%; right: 15%; animation-delay: -4s; }
-.star {
-  position: absolute;
-  width: 20px;
-  height: 35px;
-  filter: drop-shadow(0 0 8px #fff);
-  animation: twinkle 3s infinite ease-in-out;
-  opacity: 0.8;
-  filter: drop-shadow(0 0 10px #fff);
-  animation: twinkle 3s infinite ease-in-out;
-}
-.s1 { top: 25%; right: 8%; width: 20px; height: 20px; }
-.s2 { bottom: 25%; left: 12%; width: 25px; height: 25px; }
+
 
 @keyframes floatBubble {
   0%, 100% { transform: translateY(0) scale(1); }
   50% { transform: translateY(-30px) scale(1.1); }
-}
-@keyframes twinkle {
-  0%, 100% { opacity: 0.3; transform: scale(0.8) rotate(0deg); }
-  50% { opacity: 0.9; transform: scale(1.2) rotate(15deg); }
 }
 
 .section_main .portfolio_title {
@@ -466,22 +460,13 @@ h1, h2, h3, h4,
 
 @media screen and (max-width: 768px) {
   .section_main .portfolio_title {
-    font-size: 16vw; /* 모바일에서는 더 큼직하게! */
-    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.4);
-    text-shadow: 
-      0 3px 0 var(--main-light),
-      0 6px 12px rgba(209, 122, 138, 0.3);
+    font-size: 16vw; 
   }
 
-  /* 버블 크기랑 위치 조정 (모바일 화면에 맞게) */
-  .b1 { width: 150px; height: 150px; top: 20%; left: -10%; }
+  .b1 { width: 150px; height: 150px; top: 14%; left: -10%; }
   .b2 { width: 120px; height: 120px; bottom: 10%; right: -5%; }
-  .b3 { display: none; } /* 너무 복잡하면 하나 지우기 */
+  .b3 { display: none; } 
 
-  .s1 { top: 20%; right: 15%; width: 15px; height: 25px; }
-  .s2 { bottom: 20%; left: 10%; width: 20px; height: 32px; }
-  
-  /* 스크롤 아이콘 크기 조정 */
   .section.active .scroll_down_icon_mouse {
     height: 40px !important;
     width: 22px !important;
@@ -582,7 +567,7 @@ h1, h2, h3, h4,
   line-height: 1.8;
   margin-bottom: 40px;
   font-weight: 500;
-  color: #7a7a7a;
+  color: #999;
 }
 
 .profile_info {
@@ -618,6 +603,7 @@ h1, h2, h3, h4,
 .section_about.active .profile_info li:nth-child(5) { transition-delay: 0.9s; }
 .section_about.active .profile_info li:nth-child(6) { transition-delay: 1.0s; }
 .section_about.active .profile_info li:nth-child(7) { transition-delay: 1.1s; }
+
 .profile_info li::before {
   content: "";
   position: absolute;
@@ -652,6 +638,81 @@ h1, h2, h3, h4,
 .profile_info a:hover {
   color: var(--main-deep);
 }
+@media screen and (max-width: 768px) {
+  .cont_boxs{
+    padding: 0 24px;
+  }
+  .about_title_wrap {
+    display: none;
+  }
+    .section_about .section_middle {
+    margin-top: 0; 
+  }
+
+  /* 카드 박스 모바일 최적화 */
+  .about_card.profile {
+    padding: 16px 20px 30px 20px; /* 양옆 여백 줄임 */
+    margin: 0 auto;
+    border-radius: 20px;
+  }
+
+  /* 카드 위 "Profile" 스티커 크기 조정 */
+  .about_card.profile::before {
+    font-size: 0.75rem;
+    left: 20px;
+    top: -12px;
+    padding: 3px 12px;
+  }
+
+  /* 이름(타이틀) 크기 줄이기 */
+  .card_title {
+    font-size: 1.4rem;
+    margin-bottom: 14px;
+  }
+
+  /* 자기소개 텍스트 줄바꿈/가독성 */
+  .profile_intro {
+    font-size: 0.8rem;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    white-space: normal; /* 중요: 긴 문장 줄바꿈 허용 */
+    padding: 0 10px;
+  }
+
+  /* ★ 핵심: 정보 리스트를 1열로 변경 ★ */
+  .profile_info {
+    grid-template-columns: 1fr; /* 무조건 한 줄에 하나씩 */
+    gap: 14px;
+    text-align: left; /* 모바일은 왼쪽 정렬이 국룰 */
+  }
+
+  .profile_info li {
+    padding-left: 20px; /* 하트 아이콘 자리 확보 */
+    font-size: 0.9rem;
+    line-height: 1.5;
+    flex-wrap: wrap; /* 내용이 길면 아래로 떨어지게 */
+  }
+
+  .profile_info li strong {
+    font-size: 0.8rem;
+    min-width: 80px; /* 라벨 너비 고정 */
+  }
+
+  .profile_info li span, 
+  .profile_info li a {
+    word-break: break-all; /* 긴 이메일이나 주소 잘림 방지 */
+    font-size: 0.8rem;
+  }
+
+  /* 하트 아이콘 위치 미세조정 */
+  .profile_info li::before {
+    width: 10px;
+    height: 9px;
+    top: 8px; /* 텍스트 첫 줄에 맞춤 */
+    transform: none;
+  }
+}
+
 /* ============================================ (3) section3 - section_skill ========================================== */
 .section_skill {
   background: #fff;

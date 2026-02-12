@@ -1,4 +1,24 @@
 $(document).ready(function () {
+ // --- [1] 네브 눈치 챙기기 변수 & 함수 ---
+  let navTimer;
+
+  function expandNav() {
+    clearTimeout(navTimer);
+    $('.header_wrap').addClass('expanded');
+  }
+
+  function collapseNav() {
+    // 사용자가 메뉴 위에 마우스를 올리고 있거나 터치 중이면 안 닫음
+    if ($('.header_wrap:hover').length > 0) return;
+    $('.header_wrap').removeClass('expanded');
+  }
+
+  function collapseNavWithDelay(delay = 2500) {
+    clearTimeout(navTimer);
+    navTimer = setTimeout(function () {
+      collapseNav();
+    }, delay);
+  }
 
 function hideLoading() {
   $("#loading").fadeOut(600, function () {
@@ -19,33 +39,48 @@ function hideLoading() {
 
   $("#fullpage").fullpage({
     anchors: ["main", "about", "skill", "work", "contact"],
-    scrollingSpeed: 1000,
+    scrollingSpeed: 1100,
     afterRender: function () {
       
     },
     onLeave: function (index, nextIndex) {
-      $(".section").removeClass("active");
-      $(".section")
-        .eq(nextIndex - 1)
-        .addClass("active");
+     $(".section").removeClass("active").eq(nextIndex - 1).addClass("active");
 
       if (nextIndex !== 1) $(".header_wrap").addClass("active");
       else $(".header_wrap").removeClass("active");
 
-      $(".nav_menu li").removeClass("active");
-      $(".nav_menu li")
-        .eq(nextIndex - 1)
-        .addClass("active");
-      
-      $('.header_wrap').addClass('expanded'); 
-       setTimeout(function() {
-      $('.header_wrap').removeClass('expanded');
-      }, 3000);
+      $(".nav_menu li").removeClass("active").eq(nextIndex - 1).addClass("active");
+
+      expandNav();
+      collapseNavWithDelay(2500);
 
       if (nextIndex === 3) setTimeout(activeSkillGauge, 500);
       else resetSkillGauge();
     },
   });
+
+  $('.header_wrap').on('mouseenter touchstart', function() {
+    expandNav();
+  });
+
+  // 메뉴 영역에서 손 떼면 그때부터 타이머 시작
+  $('.header_wrap').on('mouseleave touchend', function() {
+    collapseNavWithDelay(1500);
+  });
+
+  // 화면 맨 위(100px 이내) 감지해서 펼치기
+  $(document).on('touchstart mousemove', function (e) {
+    let touchY = e.pageY || (e.originalEvent.touches ? e.originalEvent.touches[0].pageY : 0);
+    if (touchY < 100) {
+      expandNav();
+    }
+  });
+
+  // 화면 중앙 터치하면 네브 즉시 접기
+  $('.section').on('touchstart', function () {
+    collapseNav();
+  });
+
 
     $(document).on('click', '.scroll_down_icon', function() {
     $.fn.fullpage.moveSectionDown();
@@ -58,7 +93,6 @@ function hideLoading() {
     let per = $this.find("h3").data("per");
     let circle = $this.find(".bar");
     
-    // 반지름이 68일 때 둘레 계산 (C = 2 * π * r)
     let r = 68; 
     let c = Math.PI * (r * 2);
 
@@ -67,7 +101,6 @@ function hideLoading() {
 
     circle.css("stroke-dashoffset", offset);
 
-    // 숫자 카운팅 애니메이션
     $({ val: 0 }).animate(
       { val: per },
       {
@@ -76,7 +109,6 @@ function hideLoading() {
           $this.find("h3").text(Math.floor(this.val) + "%");
         },
         complete: function () {
-          // 마지막에 정확한 퍼센트 박기 (1 차이 나는 거 해결)
           $this.find("h3").text(per + "%");
         }
       }
@@ -115,6 +147,7 @@ var workSwiper = new Swiper(".section_work_swiper", {
     1024: { slidesPerView: 2.5 },
   },
 });
+
 emailjs.init("g0LSuQJdOwNbg8pBM"); 
 
   $('.send_btn').off('click').on('click', function() {
@@ -160,9 +193,7 @@ emailjs.init("g0LSuQJdOwNbg8pBM");
     }
   });
 
-});
-
-function createSkillDeco() {
+  function createSkillDeco() {
     const icons = ['⭐', '✨', '💗', '🍭', '🎈', '☁️', '🌸','💕','🫧','💖','💫']; // 쓰고 싶은 이모지들
     const $decoWrap = $('.skill_deco');
     
@@ -186,42 +217,8 @@ function createSkillDeco() {
 }
 
 createSkillDeco();
-
-$(document).ready(function () {
-  // 메뉴 펼치고 접는 함수
-  function expandNav() {
-    $('.header_wrap').addClass('expanded');
-  }
-  function collapseNav() {
-    $('.header_wrap').removeClass('expanded');
-  }
-
-  // 1. 처음 로딩 후 2초간 보여줬다가 접기
-  setTimeout(() => {
-    collapseNav();
-  }, 3500); // 로딩 2.5초 + 구경 1초
-
-  // 2. 섹션 이동할 때마다 잠깐 펼쳐서 위치 알려주기
-  // 기존 fullpage 설정의 onLeave나 afterLoad에 추가해!
-  // 여기서는 onLeave에 추가하는 걸 추천!
-  
-  // (Fullpage onLeave 안에 넣을 내용)
-  // onLeave: function(index, nextIndex) {
-  //    expandNav(); 
-  //    setTimeout(collapseNav, 2000); // 2초 뒤 다시 자동 접힘
-  // }
-
-  // 3. 수동 제어: 메뉴 근처에 손 대면 펼치기
-  $(document).on('touchstart mousemove', function(e) {
-    let touchY = e.pageY || (e.originalEvent.touches ? e.originalEvent.touches[0].pageY : 0);
-    if (touchY < 100) {
-      expandNav();
-    }
-  });
-
-  // 4. 화면 중앙 터치하면 네브 접기 (편의성)
-  $('.section').on('touchstart', function() {
-    collapseNav();
-  });
 });
+
+
+
 
