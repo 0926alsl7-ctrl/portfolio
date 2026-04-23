@@ -185,9 +185,9 @@ var workSwiper = new Swiper(".section_work_swiper", {
 emailjs.init("g0LSuQJdOwNbg8pBM"); 
 
   $('.send_btn').off('click').on('click', function() {
-    const name = $('.contact_input_name').val();
-    const email = $('.contact_input_email').val();
-    const message = $('.contact_input_message').val();
+    const name = $('input.contact_input_name').val().trim();
+    const email = $('input.contact_input_email').val().trim();
+    const message = $('textarea.contact_input_message').val().trim();
 
     if(!name || !email || !message) {
       alert("모든 항목을 작성해 주세요! 💌");
@@ -226,6 +226,7 @@ emailjs.init("g0LSuQJdOwNbg8pBM");
         });
     }
   });
+
 
   function createSkillDeco() {
     const icons = ['⭐', '✨', '💗', '🍭', '🎈', '☁️', '🌸','💕','🫧','💖','💫']; 
